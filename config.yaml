@@ -1,4 +1,4 @@
-baseURL:         ""
+baseURL:         "http://radardoalagamento.org.br"
 languageCode:    "pt-br"
 title:           "Radar do alagamento"
 disableKinds:    ["taxonomy", "taxonomyTerm", "RSS"]
@@ -26,5 +26,5 @@ params:
   author:
     Radar:
       name: "Radar do Alagamento"
-      link: ""
+      link: "http://radardoalagamento.org.br"
       logo: ""
