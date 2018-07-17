@@ -1,0 +1,15 @@
+
+#notFoundPage
+- id: 404Title
+  translation: "Não encontrado"
+- id: 404Text
+  translation: "Essa página não foi encontrada"
+- id: returnToHome
+  translation: "Retornar para página inicial?"
+
+#sharing
+- id: sharing
+  translation: "Compartilhamento"
+
+
+
