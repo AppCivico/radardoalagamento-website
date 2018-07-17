@@ -1,0 +1,32 @@
+<article id="about-app">
+{{ range where .Site.Pages ".File.TranslationBaseName" "notification"}}
+<section id="notification">
+  <div >
+    <h1>{{ .Title }}</h1>
+        {{ .Content }}
+  </div>
+
+</section>
+{{ end }}
+
+{{ range where .Site.Pages ".File.TranslationBaseName" "sharing"}}
+<section id="sharing">
+    <div>
+      <h1>{{ .Title }}</h1>
+          {{ .Content }}
+    </div>
+
+  </section>
+{{ end }}
+
+{{ range where .Site.Pages ".File.TranslationBaseName" "contribution"}}
+  <section id="contribution">
+      <div>
+        <h1>{{ .Title }}</h1>
+            {{ .Content }}
+      </div>
+
+    </section>
+{{ end }}
+</article>
+
