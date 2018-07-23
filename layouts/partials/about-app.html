@@ -1,10 +1,17 @@
 <article id="about-app">
 {{ range where .Site.Pages ".File.TranslationBaseName" "notification"}}
 <section id="notification">
-  <div >
+   <div>
+       <img src="/source/images/icons/cidade.png" alt="lala">
+   </div>
+    <div class="about-app__title">
     <h1>{{ .Title }}</h1>
+    </div>
+
+    <div>
         {{ .Content }}
   </div>
+
 
 </section>
 {{ end }}
