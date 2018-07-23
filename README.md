@@ -4,7 +4,12 @@ O Radar do Alagamento tem como base os dados sensores espalhados por todo a cida
 
 ## Install dependencies
 
-`npm install`
+`$ npm install`
+
+`$ npm install add npm-run-all --dev`
+
+`$ npm run dev`
+
 
 ## Build
 ### For development
