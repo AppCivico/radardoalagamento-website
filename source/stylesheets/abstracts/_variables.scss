@@ -105,6 +105,23 @@ $palette: (
 		'dark': rgb(64, 68, 71),
 		'x-dark': shade(rgb(64, 68, 71), 10%),
 	),
+	'blue': (
+		'base': rgb(72,206,216),
+		'medium': rgb(16,161,186),
+		'dark': rgb(14,113,141),
+	),
+	'text-blue': (
+		'base': rgb(40,207,206),
+	),
+	'text-white': (
+		'base': rgb(255,255,255),
+	),
+	'text-black': (
+		'base': rgb(0,0,0),
+	),
+	'text-gray': (
+		'base': rgb(93,93,93)
+	),
 	'white': rgb(255, 255, 255),
 	'black': rgb(0, 0, 0),
 	'debug': rgb(255, 0, 0),
