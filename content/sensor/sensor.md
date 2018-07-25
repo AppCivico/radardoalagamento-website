@@ -1,6 +1,6 @@
 ---
 date: 2018-07-16T16:01:25-03:00
-draft: true
+draft: false
 title: Muito mais do que um aplicativo
 ---
 
