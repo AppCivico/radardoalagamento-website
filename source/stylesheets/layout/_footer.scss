@@ -12,3 +12,13 @@
  */
 [role='contentinfo'] {
 }
+
+.footer-container {
+    background-color: palette('blue', 'dark');
+}
+.footer-contato h4 {
+    color: palette('text-content', 'white');
+}
+.footer-parceiros h4 {
+    color: palette('text-content', 'white');
+}
