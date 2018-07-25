@@ -2,13 +2,11 @@
 {{ range where .Site.Pages ".File.TranslationBaseName" "notification"}}
 <section id="notification">
    <div>
-       <img src="/source/images/icons/cidade.png" alt="lala">
+       <img src="{{ .Params.image }}" alt="{{ .Title }}">
    </div>
-    <div class="about-app__title">
-    <h1>{{ .Title }}</h1>
-    </div>
+    <div class="">
+    <h1 class="about-app-title">{{ .Title }}</h1>
 
-    <div>
         {{ .Content }}
   </div>
 
@@ -19,7 +17,12 @@
 {{ range where .Site.Pages ".File.TranslationBaseName" "sharing"}}
 <section id="sharing">
     <div>
-      <h1>{{ .Title }}</h1>
+        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+    </div>
+
+    <div>
+      <h1 class="about-app-title">{{ .Title }}</h1>
+
           {{ .Content }}
     </div>
 
@@ -29,7 +32,10 @@
 {{ range where .Site.Pages ".File.TranslationBaseName" "contribution"}}
   <section id="contribution">
       <div>
-        <h1>{{ .Title }}</h1>
+        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+      </div>
+      <div>
+        <h1 class="about-app-title">{{ .Title }}</h1>
             {{ .Content }}
       </div>
 
