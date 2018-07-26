@@ -15,10 +15,61 @@
 
 .footer-container {
     background-color: palette('blue', 'dark');
+	color: palette('text-content', 'white');
+	text-align: center;
+	margin: auto;
+	vertical-align: top;
+	@media screen and (min-width: breakpoint('tablet')) {
+		margin: 0;
+
+		text-align: left;
+	}
 }
-.footer-contato h4 {
-    color: palette('text-content', 'white');
+a {
+	color: palette('blue', 'base');
 }
-.footer-parceiros h4 {
-    color: palette('text-content', 'white');
+a:link {
+	text-decoration: none;
+ }
+ .big-link-parceiro {
+	@include image-replacement;
+
+	display: inline-block;
+	width: 5.5rem;
+	height: 3.5rem;
+	margin-right: 0.2rem;
+	margin-left: 0;
+	text-align: center;
+	text-decoration: none;
+
+ }
+.link-parceiro--nicbr {
+    background-image: image('logo-nicbr.png');
+    background-position: center center;
+
 }
+.link-parceiro--w3c {
+    background-image: image('logo-w-3-c.png');
+    background-position: center center;
+
+}
+.link-parceiro--appcivico {
+    background-image: image('logo-appcivico.png');
+    background-position: center center;
+
+}
+.footer-contato {
+	display: inline-block;
+	width: 28%;
+
+
+}
+.footer-parceiro {
+	display: inline-block;
+	width: 28%;
+	white-space: 1em;
+	margin-left: 4%;
+
+
+}
+
