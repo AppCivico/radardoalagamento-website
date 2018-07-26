@@ -19,7 +19,7 @@
 /// @return {Url}
 /// @require {variable} $base-url
 @function image($path, $base: $base-url) {
-	@return asset($base, 'img/', $path);
+	@return asset($base, 'images/', $path);
 }
 
 /// Returns URL to a font based on its path
