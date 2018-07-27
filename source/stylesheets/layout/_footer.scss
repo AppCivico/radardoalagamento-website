@@ -13,8 +13,8 @@
 [role='contentinfo'] {
 }
 
-.footer-container {
-    background-color: palette('blue', 'dark');
+.footer-site {
+	background-color: palette('blue', 'dark');
 	color: palette('text-content', 'white');
 	text-align: center;
 	margin: auto;
@@ -60,13 +60,13 @@ a:link {
 }
 .footer-contato {
 	display: inline-block;
-	width: 28%;
+	width: 40%;
 
 
 }
 .footer-parceiro {
 	display: inline-block;
-	width: 28%;
+	width: 40%;
 	white-space: 1em;
 	margin-left: 4%;
 
