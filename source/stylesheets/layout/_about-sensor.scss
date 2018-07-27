@@ -1,0 +1,19 @@
+.about-sensor {
+    background-color: palette('blue', 'base');
+}
+.sensor {
+    color: palette('text-content', 'black');
+    background-image: image('mockup-interface-2.png'), image('elementoa.png'), image('elementog.png')
+    // background-image: image('elementoa.png');
+}
+.about-sensor-title {
+    color: palette('text-content', 'white');
+}
+.about-sensor-content {
+    width: 30%;
+    h1 {
+        font-size: 3.4em;
+    }
+    margin-left: 50em;
+}
+
