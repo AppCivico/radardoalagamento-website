@@ -72,6 +72,14 @@ $leadings: (
 	'max': 1.5,
 ) !default;
 
+/// Default Leading
+///
+/// @access public
+/// @type number
+$line-height: 1.45 !default; // 30px
+
+$gutter: $line-height * $body-font-size / 1em * 1rem;
+
 
 /// flexible line length map
 ///
@@ -276,3 +284,9 @@ $base-url: '/assets/' !default;
 @if variable-exists('im-media-support') and $im-media-support == false {
 	$breakpoints: _im-to-px($breakpoints);
 }
+
+/// Transition and animation related
+
+$transition-duration: 1s;
+$animated-max-height: $line-height * 40rem;
+$button-diameter: 3.125rem;
