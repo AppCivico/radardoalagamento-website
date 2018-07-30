@@ -10,3 +10,13 @@
  */
 [role='banner'] {
 }
+.site-header {
+    background-image: linear-gradient(to bottom, palette('white') 46%, palette('blue', 'base') 46%, palette('blue', 'base') 64%, palette('blue', 'medium') 64%, palette('blue', 'medium') 82%, palette('blue','dark') 82%);
+
+}
+.content-header img {
+    position: relative;
+    top: 0;
+    left: 22.2em;
+}
+
