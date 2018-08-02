@@ -1,6 +1,6 @@
 <article class="about-app">
 {{ range where .Site.Pages ".File.TranslationBaseName" "notification"}}
-<section id="notification">
+<section class="notification">
    <div class="about-app-image">
        <img src="{{ .Params.image }}" alt="{{ .Title }}">
    </div>
@@ -18,7 +18,7 @@
 {{ end }}
 
 {{ range where .Site.Pages ".File.TranslationBaseName" "sharing"}}
-<section id="sharing">
+<section class="sharing">
     <div class="about-app-image">
         <img src="{{ .Params.image }}" alt="{{ .Title }}">
     </div>
@@ -35,7 +35,7 @@
 {{ end }}
 
 {{ range where .Site.Pages ".File.TranslationBaseName" "contribution"}}
-  <section id="contribution">
+  <section class="contribution">
       <div class="about-app-image">
         <img src="{{ .Params.image }}" alt="{{ .Title }}">
       </div>
