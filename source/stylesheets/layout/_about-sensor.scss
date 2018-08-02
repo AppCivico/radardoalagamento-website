@@ -14,7 +14,7 @@
 	image('elementoe.png'),
 	image('elementoh.png');
 	background-position: top left 10%,
-	bottom 17% left 34%,
+	bottom 13% left 34%,
 	top left,
 	bottom 20% left 24%,
 	top right 49%,
@@ -31,11 +31,13 @@
 }
 
 .about-sensor-content {
+	line-height: 1.5em;
 	width: 30%;
 	margin-left: 50em;
 
 	h1 {
 		font-size: 3.4em;
+		line-height: 1.3em;
 	}
 }
 
