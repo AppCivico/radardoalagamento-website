@@ -1,21 +1,25 @@
 .about-app-image {
 	display: inline-block;
+	width: 15em;
+	height: 10em;
+	padding: 2em;
 	margin-left: 15em;
-	width: 150px;
-	height: 150px;
-	padding: 1em;
 }
+
 .about-app-content {
 	display: inline-block;
-	vertical-align: 15px;
 	width: 28%;
+	vertical-align: 15px;
+
 }
+
 .about-app-icon {
 	display: inline-block;
-	margin-left: 5em;
 	margin-right: 5em;
+	margin-left: 5em;
 	vertical-align: 100%;
 }
+
 .about-app-title {
 	color: palette('text-content', 'blue-light');
 }

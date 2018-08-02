@@ -1,38 +1,41 @@
-.about-sensor {
-    background-color: palette('blue', 'base');
-    padding: 5em;
-}
-.sensor {
-    color: palette('text-content', 'black');
-    background-image: image('mockup-interface-2.png'),
-    image('elementoa.png'),
-    image('elementog.png'),
-    image('elementod.png'),
-    image('elementob.png'),
-    image('elementoc.png'),
-    image('elementof.png'),
-    image('elementoe.png'),
-    image('elementoh.png');
-    background-position: top left 10%,
-    bottom 17% left 34%,
-    top left,
-    bottom 20% left 24%,
-    top right 49%,
-    top 30% right 50%,
-    top 70% right 47%,
-    top 55% left 7%,
-    top 3% left 11%;
-
-    // background-image: image('elementoa.png');
-}
 .about-sensor-title {
-    color: palette('text-content', 'white');
+	color: palette('text-content', 'white');
 }
+
+.sensor {
+	color: palette('text-content', 'black');
+	background-image: image('mockup-interface-2.png'),
+	image('elementoa.png'),
+	image('elementog.png'),
+	image('elementod.png'),
+	image('elementob.png'),
+	image('elementoc.png'),
+	image('elementof.png'),
+	image('elementoe.png'),
+	image('elementoh.png');
+	background-position: top left 10%,
+	bottom 17% left 34%,
+	top left,
+	bottom 20% left 24%,
+	top right 49%,
+	top 30% right 50%,
+	top 70% right 47%,
+	top 55% left 7%,
+	top 3% left 11%;
+
+}
+
+.about-sensor {
+	padding: 5em;
+	background-color: palette('blue', 'base');
+}
+
 .about-sensor-content {
-    width: 30%;
-    h1 {
-        font-size: 3.4em;
-    }
-    margin-left: 50em;
+	width: 30%;
+	margin-left: 50em;
+
+	h1 {
+		font-size: 3.4em;
+	}
 }
 
