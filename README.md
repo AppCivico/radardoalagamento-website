@@ -12,4 +12,7 @@ O Radar do Alagamento tem como base os dados sensores espalhados por todo a cida
 
 
 ## Build
+
+`$ npm run build`
+
 ### For development
