@@ -3,10 +3,11 @@
 	width: 15em;
 	height: 10em;
 	padding: 2em;
-	margin-left: 15em;
+	margin-left: 17.4em;
 }
 
 .about-app-content {
+	color: palette('text-content', 'black');
 	display: inline-block;
 	width: 28%;
 	vertical-align: 15px;
@@ -22,4 +23,12 @@
 
 .about-app-title {
 	color: palette('text-content', 'blue-light');
+}
+
+.sharing {
+	margin-top: 5em;
+}
+
+.contribution {
+	margin-top: 5em;
 }
