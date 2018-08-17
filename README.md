@@ -10,6 +10,16 @@ O Radar do Alagamento tem como base os dados sensores espalhados por todo a cida
 
 `$ npm run dev`
 
+Install Hugo
+
+MacOS
+
+`$ brew install hugo`
+
+Linux
+
+`$ snap install hugo`
+
 
 ## Build
 
