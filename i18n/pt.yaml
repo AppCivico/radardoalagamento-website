@@ -10,6 +10,15 @@
 #sharing
 - id: sharing
   translation: "Compartilhamento"
-
-
-
+#contribution
+- id: contribution
+  translation: "Contribuição"
+#notification
+- id: notification
+  translation: "Notificação"
+#about-app
+- id: about app
+  translation: "Sobre o App"
+#about-sensor
+- id: about sensor
+  translation: "Sobre os sensores"
