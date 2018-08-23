@@ -15,12 +15,16 @@
 
 .footer-site {
 	margin: auto;
+
 	text-align: center;
 	vertical-align: top;
+
 	color: palette('text-content', 'white');
+
 	background-color: palette('blue', 'dark');
 	@media screen and (min-width: breakpoint('tablet')) {
 		margin: 0;
+
 		text-align: left;
 	}
 }
@@ -37,47 +41,48 @@ a:link {
 	@include image-replacement;
 
 	display: inline-block;
+
 	width: 5.5rem;
 	height: 3.5rem;
+
 	margin-right: 0.2rem;
 	margin-left: 0;
+
 	text-align: center;
 	text-decoration: none;
-
 }
 
 .link-parceiro--nicbr {
 	background-image: image('logo-nicbr.png');
 	background-position: center center;
-
 }
 
 .link-parceiro--w3c {
 	background-image: image('logo-w-3-c.png');
 	background-position: center center;
-
 }
 
 .link-parceiro--appcivico {
 	background-image: image('logo-appcivico.png');
 	background-position: center center;
-
 }
 
 .footer-contato {
-	display: inline-block;
-	width: 40%;
+	@media screen and (min-width: breakpoint('tablet')) {
+		display: inline-block;
 
-
+		width: 40%;
+	}
 }
 
 .footer-parceiro {
-	display: inline-block;
-	width: 40%;
-	margin-left: 4%;
-	white-space: 1em;
+	@media screen and (min-width: breakpoint('tablet')) {
+		display: inline-block;
 
+		width: 40%;
 
+		margin-left: 4%;
 
+		white-space: 1em;
+	}
 }
-

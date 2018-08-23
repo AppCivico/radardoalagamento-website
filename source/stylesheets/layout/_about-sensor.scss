@@ -4,6 +4,7 @@
 
 .sensor {
 	color: palette('text-content', 'black');
+
 	background-image: image('mockup-interface-2.png'),
 	image('elementoa.png'),
 	image('elementog.png'),
@@ -22,22 +23,25 @@
 	top 70% right 47%,
 	top 55% left 7%,
 	top 3% left 11%;
-
 }
 
 .about-sensor {
 	padding: 5em;
+
 	background-color: palette('blue', 'base');
 }
 
 .about-sensor-content {
-	width: 30%;
-	margin-left: 50em;
-	line-height: 1.5rem;
+	@media screen and (min-width: breakpoint('wide')) {
+		width: 30%;
 
-	h1 {
-		font-size: 3.4em;
-		line-height: 4rem;
+		margin-left: 50em;
+
+		line-height: 1.5rem;
+
+		h1 {
+			font-size: 3.4em;
+			line-height: 4rem;
+		}
 	}
 }
-
