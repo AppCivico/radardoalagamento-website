@@ -13,6 +13,7 @@
     "scss": "node-sass source/stylesheets --output-style compressed --output static/assets/stylesheets --source-map true",
     "uglify": "uglifyjs static/assets/scripts/index.js -c -r -o static/assets/scripts/index.js",
     "prebuild": "npm-run-all --parallel lint clean",
+    "build:content": "node ./_buildScripts/dataContent.js",
     "build": "npm-run-all build:sass build:img build:fonts cachebust",
     "postbuild": "cross-env NODE_ENV=production hugo --ignoreCache --cleanDestinationDir",
     "build:sass": "npm-run-all scss autoprefixer nano",
