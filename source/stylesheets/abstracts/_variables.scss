@@ -124,6 +124,7 @@ $palette: (
 		'black': rgb(0, 0, 0),
 		'gray': rgb(93, 93, 93)
 	),
+	'transparent': transparent,
 	'white': rgb(255, 255, 255),
 	'black': rgb(0, 0, 0),
 	'debug': rgb(255, 0, 0),
@@ -222,12 +223,10 @@ $breakpoints: _im-to-em(
 		'wide': 1280px,
 	)
 ) !default;
-
 $toggle-breakpoints: (
 	'toggle-table-layout': 48em,
 	'toggle-menu': 64em,
 );
-
 $breakpoints: map-merge($breakpoints, $toggle-breakpoints);
 
 // 320
