@@ -10,6 +10,7 @@
     "url": "/sensor",
     "dataDest": "./static/assets/data/sensor.json",
     "contentFolder": "./content/sensores",
+    "contentField": "description",
     "jsonRootElement": "results"
   }
 ]
