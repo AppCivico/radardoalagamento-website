@@ -2,6 +2,7 @@
 const https = require('https');
 const fs = require('fs');
 const { versionCompare } = require('./versionCompare.js');
+const { slugify } = require('./slugify.js');
 
 const sourcesAndDests = require('../_source/scripts/apiSources.json');
 
@@ -20,7 +21,7 @@ function savePages(fileData) {
 	}
 
 	jsonElements.forEach((page) => {
-		const filename = `${fileData.contentFolder}/${page.slug}.md`;
+		const filename = `${fileData.contentFolder}/${slugify(page.name)}.md`;
 
 		if (pageList.indexOf(filename) !== -1) {
 			throw new Error(`${filename} already exists.`);
@@ -46,18 +47,59 @@ function savePages(fileData) {
 			console.log(`${filename} saved.`); // eslint-disable-line no-console
 		});
 
-		const frontMatter = `---
+		let frontMatter = `---
 date: ${new Date().toISOString()}
 draft: false
 title: "${page.name || page.title}"
 id: ${page.id}
+`;
+
+		Object.keys(page).forEach(key => {
+			if (page[key] !== 'date'
+				&& page[key] !== 'name'
+				&& page[key] !== 'title'
+				&& page[key] !== 'id'
+				&& page[key] !== fileData.contentField
+
+			) {
+			 	if (typeof page[key] !== 'object') {
+					frontMatter += `${key}: "${page[key]}"
+`;
+				} else if (page[key] !== null && page[key] !== undefined) {
+					frontMatter += `${key}:
+`;
+					Object.keys(page[key]).forEach(innerKey => {
+						if (typeof page[key][innerKey] !== 'object'){
+							frontMatter += `   ${innerKey}: "${page[key][innerKey]}"
+`;
+						} else {
+							frontMatter += `  -
+`;
+
+							Object.keys(page[key][innerKey]).forEach(element => {
+								frontMatter += `    ${element}: "${page[key][innerKey][element]}"
+`;
+							});
+						}
+					});
+				}
+			}
+		});
+
+		frontMatter += `
 ---
 		`;
 
 		contentFile.write(frontMatter);
 
+		if (fileData.contentField && page[fileData.contentField]){
+			contentFile.write(page[fileData.contentField]);
+		}
+
+
 		pageList[pageList.length] = filename;
 	});
+
 
 	if (fileData.jsonRootElement === 'action_lines') {
 		console.log('Saving sorted action lines'); // eslint-disable-line no-console
