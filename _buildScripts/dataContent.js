@@ -63,14 +63,14 @@ id: ${page.id}
 
 			) {
 			 	if (typeof page[key] !== 'object') {
-					frontMatter += `${key}: "${page[key]}"
+					frontMatter += `${key}: '${page[key]}'
 `;
 				} else if (page[key] !== null && page[key] !== undefined) {
 					frontMatter += `${key}:
 `;
 					Object.keys(page[key]).forEach(innerKey => {
 						if (typeof page[key][innerKey] !== 'object'){
-							frontMatter += `   ${innerKey}: "${page[key][innerKey]}"
+							frontMatter += `  ${innerKey}: "${page[key][innerKey]}"
 `;
 						} else {
 							frontMatter += `  -
@@ -86,8 +86,7 @@ id: ${page.id}
 			}
 		});
 
-		frontMatter += `
----
+		frontMatter += `---
 		`;
 
 		contentFile.write(frontMatter);
