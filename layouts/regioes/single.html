@@ -1,0 +1,18 @@
+{{ partial "header-default" . }}
+
+<section class="districts">
+
+    <h1> {{ .Title }} </h1>
+    <ul class="district-list">
+        {{ range .Params.districts }}
+            <li>
+                {{ .name }}
+
+                {{ end }}
+            </li>
+
+    </ul>
+
+</section>
+
+{{partial "footer-default" . }}
