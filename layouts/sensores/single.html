@@ -1,0 +1,22 @@
+{{ partial "header-default" . }}
+
+<section class="sensores">
+
+    <h1> Sensor {{ .Title }} </h1>
+    <ul class="sensores-list">
+        <li>
+           <span class="key-doc">ID</span>
+           {{ .Params.source.id }}
+        </li>
+        <li>
+            <span class="key-doc">Nome</span>
+            {{ .Params.source.name }}
+        </li>
+        <li>
+            <span class="key-doc">Criado em</span>
+            {{ .Params.source.created_at }}
+        </li>
+    </ul>
+</section>
+
+{{partial "footer-default" . }}
