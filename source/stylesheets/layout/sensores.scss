@@ -1,4 +1,47 @@
+.div-table-sensores {
+	padding: 2em;
 
-.key-doc {
-	margin-right: 20em;
+	background: white;
+
+	border: solid 2px black;
+
+	& h1 {
+		margin-top: 2em;
+		margin-bottom: 1em;
+	}
+}
+.sensores-table {
+	margin-top: -8px;
+
+	border-spacing: 0 8px;
+
+	border-collapse: separate;
+
+	& th {
+		width: 25em;
+
+		text-align: left;
+	}
+
+	& td {
+		text-align: left;
+	}
+}
+
+.fontes-table {
+	margin-top: -8px;
+
+	border-spacing: 0 8px;
+
+	border-collapse: separate;
+
+	& th {
+		width: 25em;
+
+		text-align: left;
+	}
+
+	& td {
+		text-align: left;
+	}
 }
