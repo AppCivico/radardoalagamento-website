@@ -1,0 +1,16 @@
+[
+  {
+    "url": "/zone",
+    "dataDest": "./static/assets/data/zone.json",
+    "contentFolder": "./content/regioes",
+    "jsonRootElement": "results"
+  },
+
+  {
+    "url": "/sensor",
+    "dataDest": "./static/assets/data/sensor.json",
+    "contentFolder": "./content/sensores",
+    "contentField": "description",
+    "jsonRootElement": "results"
+  }
+]

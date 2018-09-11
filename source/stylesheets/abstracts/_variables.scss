@@ -124,6 +124,7 @@ $palette: (
 		'black': rgb(0, 0, 0),
 		'gray': rgb(93, 93, 93)
 	),
+	'transparent': transparent,
 	'white': rgb(255, 255, 255),
 	'black': rgb(0, 0, 0),
 	'debug': rgb(255, 0, 0),
@@ -217,17 +218,16 @@ $breakpoints: _im-to-em(
 	(
 		'phone': 320px,
 		'phablet': 480px,
-		'tablet': 768px,
-		'desktop': 1024px,
-		'wide': 1280px,
+		'tablet': 640px,
+		'desktop': 960px,
+		'wide': 1380px,
+		'super-wide': 1900px,
 	)
 ) !default;
-
 $toggle-breakpoints: (
 	'toggle-table-layout': 48em,
 	'toggle-menu': 64em,
 );
-
 $breakpoints: map-merge($breakpoints, $toggle-breakpoints);
 
 // 320

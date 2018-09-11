@@ -1,0 +1,62 @@
+{{ partial "header-default" . }}
+
+<section class="sensores">
+    <div class="div-table-sensores">
+    <h1>Fonte</h1>
+    <table class="fontes-table">
+            <tr>
+                <th>name</th>
+                <td>{{ .Params.source.name }}</td>
+            </tr>
+            <tr>
+                <th>id</th>
+                <td>{{ .Params.source.id }}</td>
+            </tr>
+            <tr>
+                <th>created_at</th>
+                <td>{{ .Params.source.created_at }}</td>
+            </tr>
+        </table>
+
+    <h1> Sensor {{ .Title }} </h1>
+    <table class="sensores-table">
+        <tr>
+            <th>source_id</th>
+            <td>{{ .Params.source_id }}</td>
+        </tr>
+        <tr>
+            <th>name</th>
+            <td>{{ .Params.name }}</td>
+        </tr>
+         <tr>
+            <th>id</th>
+            <td>{{ .Params.id }}</td>
+        </tr>
+         <tr>
+            <th>created_at</th>
+            <td>{{ .Params.created_at }}</td>
+        </tr>
+         <tr>
+            <th>sensor_type</th>
+            <td>{{ .Params.sensor_type }}</td>
+        </tr>
+         <tr>
+            <th>description</th>
+            <td>{{ .Params.description }}</td>
+        </tr>
+        {{ with .Params.location }}
+         <tr>
+            <th>location</th>
+            <td>{{ . }}</td>
+        </tr>
+        {{end}}
+         <tr>
+            <td></td>
+            <!-- <td>{{ .Params }}</td> -->
+        </tr>
+
+      </table>
+    </div>
+</section>
+
+{{partial "footer-default" . }}

@@ -1,0 +1,41 @@
+.districts h1 {
+	margin-bottom: 5em;
+
+	text-align: center;
+
+	color: palette('text-content', 'black');
+}
+
+.district-list {
+	column-width: 5em;
+
+	columns: 2;
+	@media screen and (min-width: breakpoint('wide')) {
+		margin-left: 15em;
+
+		column-gap: 17em;
+	}
+	& a {
+		&:link,
+		&:visited {
+			text-decoration: none;
+		}
+	}
+}
+
+ul {
+	list-style: none;
+}
+
+li::before {
+	display: inline-block;
+
+	width: 1em;
+
+	margin-bottom: 1.5em;
+	margin-left: -1em;
+
+	color: palette('blue', 'base');
+
+	content: '•';
+}

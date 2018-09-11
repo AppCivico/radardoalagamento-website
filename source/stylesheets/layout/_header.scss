@@ -12,21 +12,44 @@
 }
 
 .site-header {
-	background-image: image('logo-radar.png'),
-	image('elemento-header-3.png'),
-	image('elemento-header-7.png'),
-	image('elemento-header-2.png'),
-	image('elemento-header-5.png'),
-	image('elemento-header-1.png'),
-	image('elemento-header-6.png'),
-	image('elemento-header-4.png'),
-	image('elemento-header-8.png'),
-	linear-gradient(to bottom, palette('white') 64.3em, palette('blue', 'base') 64.3em, palette('blue', 'base') 79.6em, palette('blue', 'medium') 79.6em, palette('blue', 'medium') 94.9em, palette('blue', 'dark') 94.9em);
-	background-position: top 5% left 50%, top 5% left 62%, top 2% left 80%, top 30% left 72%, top 40% left 80%, top 31% left 24%, top 7% left 12%, top 12% left 28%, top 33% left 15%, top 5% left 50%, top 4% left 61%, top 2% left 81%, top 30% left 71%, top 40% left 79%, top 33% left 17%;
+	height: 90vh;
+	min-height: 450px;
 
+	background-image: image('logo-radar-320px.png'),
+	image('mockup-interface-320px.png'),
+	image('elemento-header-3-320px.png'),
+	image('elemento-header-7-320px.png'),
+	image('elemento-header-2-320px.png'),
+	image('elemento-header-5-320px.png'),
+	image('elemento-header-1-320px.png'),
+	image('elemento-header-6-320px.png'),
+	image('elemento-header-4-320px.png'),
+	image('elemento-header-8-320px.png'),
+	linear-gradient(to bottom, palette('white')52%, palette('blue', 'base') 52%, palette('blue', 'base') 62%, palette('blue', 'medium') 62%, palette('blue', 'medium') 72%, palette('blue', 'dark') 72%, palette('blue', 'dark') 82%, palette('transparent') 82%, palette('transparent') 82%);
+	background-position: top 4% left 50%,top 45% left 50%, top 5% left 62%, top 2% left 90%, top 10% left 80%, top 40% left 80%, top 31% left 24%, top 7% left 12%, top 12% left 28%, top 33% left 15%, top 5% left 50%, top 4% left 61%, top 2% left 81%, top 30% left 71%, top 40% left 79%, top 33% left 17%;
+
+	@media screen and (min-width: breakpoint('desktop')) {
+		min-height: 1250px;
+
+		background-image: image('logo-radar-960px.png'),
+		image('mockup-interface-960px.png'),
+		image('elemento-header-3-960px.png'),
+		image('elemento-header-7-960px.png'),
+		image('elemento-header-2-960px.png'),
+		image('elemento-header-5-960px.png'),
+		image('elemento-header-1-960px.png'),
+		image('elemento-header-6-960px.png'),
+		image('elemento-header-4-960px.png'),
+		image('elemento-header-8-960px.png'),
+		linear-gradient(to bottom, palette('white') 60%, palette('blue', 'base') 60%, palette('blue', 'base') 72%, palette('blue', 'medium') 72%, palette('blue', 'medium') 84%, palette('blue', 'dark') 84%, palette('blue', 'dark') 96%, palette('transparent') 96%, palette('transparent') 96%);
+		background-position: top 4% left 50%,top 70% left 50%, top 5% left 66%, top 2% left 99%, top 30% left 80%, top 40% left 90%, top 31% left 20%, top 7% left 10%, top 12% left 28%, top 33% left 8%, top 5% left 50%, top 4% left 61%, top 2% left 81%, top 30% left 71%, top 40% left 79%, top 33% left 10%;
+	}
 
 	@media screen and (min-width: breakpoint('wide')) {
+		min-height: 1750px;
+
 		background-image: image('logo-radar.png'),
+		image('mockup-interface.png'),
 		image('elemento-header-3.png'),
 		image('elemento-header-7.png'),
 		image('elemento-header-2.png'),
@@ -36,7 +59,24 @@
 		image('elemento-header-4.png'),
 		image('elemento-header-8.png'),
 		linear-gradient(to bottom, palette('white') 64.3em, palette('blue', 'base') 64.3em, palette('blue', 'base') 79.6em, palette('blue', 'medium') 79.6em, palette('blue', 'medium') 94.9em, palette('blue', 'dark') 94.9em);
-		background-position: top 5% left 50%, top 5% left 62%, top 2% left 80%, top 30% left 72%, top 40% left 80%, top 31% left 24%, top 7% left 12%, top 12% left 28%, top 33% left 15%, top 5% left 50%, top 4% left 61%, top 2% left 81%, top 30% left 71%, top 40% left 79%, top 33% left 17%;
+		background-position: top 5% left 50%, top 85% left 50%, top 5% left 68%, top 2% left 99%, top 30% left 80%, top 40% left 90%, top 31% left 16%, top 7% left 10%, top 12% left 26%, top 33% left 3%, top 5% left 50%, top 4% left 61%, top 2% left 81%, top 30% left 71%, top 40% left 79%, top 33% left 17%;
+	}
+
+	@media screen and (min-width: breakpoint('super-wide')) {
+		min-height: 1750px;
+
+		background-image: image('logo-radar.png'),
+		image('mockup-interface.png'),
+		image('elemento-header-3.png'),
+		image('elemento-header-7.png'),
+		image('elemento-header-2.png'),
+		image('elemento-header-5.png'),
+		image('elemento-header-1.png'),
+		image('elemento-header-6.png'),
+		image('elemento-header-4.png'),
+		image('elemento-header-8.png'),
+		linear-gradient(to bottom, palette('white') 64.3em, palette('blue', 'base') 64.3em, palette('blue', 'base') 79.6em, palette('blue', 'medium') 79.6em, palette('blue', 'medium') 94.9em, palette('blue', 'dark') 94.9em);
+		background-position: top 5% left 50%, top 85% left 50%, top 5% left 62%, top 2% left 80%, top 30% left 72%, top 40% left 80%, top 31% left 24%, top 7% left 12%, top 12% left 28%, top 33% left 15%, top 5% left 50%, top 4% left 61%, top 2% left 81%, top 30% left 71%, top 40% left 79%, top 33% left 17%;
 	}
 }
 
@@ -52,7 +92,15 @@
 		margin-top: 30em;
 	}
 
+	@media screen and (min-width: breakpoint('desktop')) {
+		margin-right: left;
+	}
+
 	@media screen and (min-width: breakpoint('wide')) {
 		margin-right: left;
 	}
+}
+
+.header-height-default {
+	height: 500px;
 }
