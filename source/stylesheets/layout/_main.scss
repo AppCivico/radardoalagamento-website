@@ -7,5 +7,41 @@
  *
  * The `[role='main']` element can be a `main` or an `article`
  */
+.main-container {
+	overflow: hidden;
+
+	background-color: palette('white');
+
+	transition: margin-left 0.5s;
+
+	@include media('<desktop') {
+		.menu-controller:checked + & {
+			margin-left: $off-canvas-menu-width;
+
+			transition: margin-left 0.5s;
+		}
+
+		.menu-controller:checked + & > * {
+			margin-right: $off-canvas-menu-width * -1;
+
+			transition: margin-right 0.5s;
+		}
+	}
+}
+
+.content-container {
+	flex: 1 0 auto;
+}
+
+main,
 [role='main'] {
+	clear: both;
+
+	max-width: $max-width;
+
+	padding: gutter();
+	margin-top: span(1);
+	margin-right: auto;
+	margin-bottom: $line-height * 1em;
+	margin-left: auto;
 }

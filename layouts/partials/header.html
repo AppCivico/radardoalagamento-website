@@ -16,8 +16,14 @@
 	<article class="site-header">
 
 		<section class="content-header">
-			<!-- <img src="/assets/images/mockup-interface.jpg"> -->
-
+				{{ if ne .Kind "404" }}
+				<label for="menu-controller" onclick>menu</label>
+			{{ end }}
+			{{ if ne .Kind "404" }}
+				<nav class="main-menu" id="menu">
+					{{ partialCached "menu.html" . }}
+				</nav>
+			{{ end }}
 		</section>
 	</article>
 </header>

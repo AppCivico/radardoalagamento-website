@@ -2,14 +2,18 @@
 ---------------------------------------------------------------------------- */
 menu,
 nav {
+	font-weight: bold;
 }
 
 menu ul,
 menu ol,
 nav ul,
 nav ol {
+	width: 100%;
+	max-width: $max-width / 1em * 1rem;
+
 	padding: 0;
-	margin: 0;
+	margin: 0 auto;
 
 	list-style: none;
 }
@@ -26,12 +30,19 @@ nav li {
 
 menu a,
 nav a {
+	@include link-undercover {
+		color: palette('brown');
+	}
+
 	display: block;
 
-	overflow: hidden;
+	padding: gutter() / 1em * 1rem;
 
-	&:link {
-		text-decoration: none;
+	@include media ('>=desktop') {
+		padding-right: 0;
+	}
+	@include on-event {
+		text-decoration: underline;
 	}
 }
 
@@ -39,6 +50,126 @@ nav a {
 	pointer-events: none;
 }
 
+
+.main-menu {
+	@include media('<desktop') {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+
+		width: 0;
+
+		margin: 0;
+
+		overflow: hidden;
+
+		white-space: nowrap;
+
+		transition: width 0.5s;
+
+		.menu-controller:checked + * & {
+			width: $off-canvas-menu-width;
+
+			overflow-y: auto;
+
+			box-shadow: inset -7px 1px 20px palette('shadow');
+
+			transition: width 0.5s;
+		}
+	}
+	@include media ('>=desktop') {
+		position: relative;
+		top: $line-height * 1em;
+
+		z-index: layer('default');
+
+		margin-left: 50%;
+	}
+}
+
+
+.main-menu > ul {
+	@include clearfix;
+
+	width: auto;
+	max-width: none;
+
+	background: linear-gradient(to left, palette('orange'), palette('orange', 'light'));
+
+	@include media('<desktop') {
+		display: block;
+
+		margin: 0;
+
+		background: transparent;
+	}
+	@include media('>=desktop') {
+		margin: 0 0 0 (span(3 'wide') / 1em * -1 * 1rem);
+
+		box-shadow: 0 16px 24px palette('shadow');
+	}
+	@include media('>=12col') {
+		margin: 0 0 0 (span(2 'wide') / 1em * -1 * 1rem);
+	}
+}
+
+
+.main-menu > ul > li {
+	float: left;
+
+	@include media('<desktop') {
+		float: none;
+
+		display: block;
+	}
+}
+
+.main-menu a {
+	@include on-event() {
+		@include media('<desktop') {
+			text-decoration: none;
+
+			color: palette('white');
+
+			background-color: palette('orange', 'dark');
+		}
+	}
+}
+
+[for='menu-controller'] {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	display: none;
+
+	width: (span(2) / 1em * 1rem);
+
+	padding: (gutter() / 2) gutter();
+
+	font-size: 1em;
+
+	@include media('<desktop') {
+		display: block;
+		z-index: layer('dropdown');
+	}
+
+	&::before {
+		font-weight: bold;
+		font-size: 2em;
+		line-height: 0.75;
+		font-family: sans-serif;
+
+		vertical-align: middle;
+
+		content: '\20\2261\20';
+
+		.menu-controller:checked ~ * & {
+			content: '\20\d7\20';
+		}
+	}
+}
 
 /* access
 ---------------------------------------------------------------------------- */
