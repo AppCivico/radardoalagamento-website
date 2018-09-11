@@ -19,9 +19,9 @@
 .about-app-content {
 	display: block;
 
+	margin-top: 3em;
 	margin-right: auto;
 	margin-left: auto;
-	margin-top: 3em;
 
 	@media screen and (min-width: breakpoint('wide')) {
 		display: inline-block;
