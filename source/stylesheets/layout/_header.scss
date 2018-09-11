@@ -26,7 +26,7 @@
 	image('elemento-header-4-320px.png'),
 	image('elemento-header-8-320px.png'),
 	linear-gradient(to bottom, palette('white')52%, palette('blue', 'base') 52%, palette('blue', 'base') 62%, palette('blue', 'medium') 62%, palette('blue', 'medium') 72%, palette('blue', 'dark') 72%, palette('blue', 'dark') 82%, palette('transparent') 82%, palette('transparent') 82%);
-	background-position: top 4% left 50%,top 45% left 50%, top 5% left 62%, top 2% left 90%, top 10% left 80%, top 40% left 80%, top 31% left 24%, top 7% left 12%, top 12% left 28%, top 33% left 15%, top 5% left 50%, top 4% left 61%, top 2% left 81%, top 30% left 71%, top 40% left 79%, top 33% left 17%;
+	background-position: top 4% left 50%, top 45% left 50%, top 5% left 62%, top 2% left 90%, top 10% left 80%, top 40% left 80%, top 31% left 24%, top 7% left 12%, top 12% left 28%, top 33% left 15%, top 5% left 50%, top 4% left 61%, top 2% left 81%, top 30% left 71%, top 40% left 79%, top 33% left 17%;
 
 	@media screen and (min-width: breakpoint('desktop')) {
 		min-height: 1250px;
@@ -42,7 +42,7 @@
 		image('elemento-header-4-960px.png'),
 		image('elemento-header-8-960px.png'),
 		linear-gradient(to bottom, palette('white') 60%, palette('blue', 'base') 60%, palette('blue', 'base') 72%, palette('blue', 'medium') 72%, palette('blue', 'medium') 84%, palette('blue', 'dark') 84%, palette('blue', 'dark') 96%, palette('transparent') 96%, palette('transparent') 96%);
-		background-position: top 4% left 50%,top 70% left 50%, top 5% left 66%, top 2% left 99%, top 30% left 80%, top 40% left 90%, top 31% left 20%, top 7% left 10%, top 12% left 28%, top 33% left 8%, top 5% left 50%, top 4% left 61%, top 2% left 81%, top 30% left 71%, top 40% left 79%, top 33% left 10%;
+		background-position: top 4% left 50%, top 70% left 50%, top 5% left 66%, top 2% left 99%, top 30% left 80%, top 40% left 90%, top 31% left 20%, top 7% left 10%, top 12% left 28%, top 33% left 8%, top 5% left 50%, top 4% left 61%, top 2% left 81%, top 30% left 71%, top 40% left 79%, top 33% left 10%;
 	}
 
 	@media screen and (min-width: breakpoint('wide')) {
@@ -99,8 +99,4 @@
 	@media screen and (min-width: breakpoint('wide')) {
 		margin-right: left;
 	}
-}
-
-.header-height-default {
-	height: 500px;
 }

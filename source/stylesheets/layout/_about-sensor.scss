@@ -22,7 +22,7 @@
 	top 18% right 20%,
 	top 27% right 15%,
 	top 21% left 24%,
-	top 9% left 27%;;
+	top 9% left 27%;
 
 	@media screen and (min-width: breakpoint('wide')) {
 		background-image: image('mockup-interface-2.png'),
@@ -45,6 +45,7 @@
 		top 3% left 11%;
 	}
 }
+
 .about-sensor {
 	background-color: palette('blue', 'base');
 	@media screen and (min-width: breakpoint('wide')) {
@@ -58,10 +59,12 @@
 	margin-top: 20em;
 	margin-right: auto;
 	margin-left: auto;
+
 	h1 {
 		font-size: 2.2em;
 		line-height: 4rem;
 	}
+
 	@media screen and (min-width: breakpoint('wide')) {
 		width: 30%;
 

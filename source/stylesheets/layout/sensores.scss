@@ -1,15 +1,16 @@
 .div-table-sensores {
 	padding: 2em;
 
-	background: white;
+	background: palette('white');
 
-	border: solid 2px black;
+	border: solid 2px palette('black');
 
 	& h1 {
 		margin-top: 2em;
 		margin-bottom: 1em;
 	}
 }
+
 .sensores-table {
 	margin-top: -8px;
 
