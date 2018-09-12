@@ -26,18 +26,42 @@ nav li {
 
 menu a,
 nav a {
-	display: block;
-
 	overflow: hidden;
+
+	font-weight: 900;
+	font-size: 20px;
+
+	color: palette('blue', 'dark');
 
 	&:link {
 		text-decoration: none;
 	}
 }
+.main-menu > ul {
+	text-align: left; /* centraliza na horizontal */
+}
+
+.main-menu > ul > li {
+	display: inline-block; /* centraliza na horizontal */
+
+	margin: 8em 2em;
+}
+
+.main-menu-2 > ul {
+	text-align: right; /* centraliza na horizontal */
+}
+
+.main-menu-2 > ul > li {
+	display: inline-block; /* centraliza na horizontal */
+
+	margin: 8em 2em;
+}
+
 
 .current > a {
 	pointer-events: none;
 }
+
 
 
 /* access
