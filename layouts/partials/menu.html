@@ -2,7 +2,10 @@
 <ul>
 {{ range .Site.Menus.main }}
     <li>
-        <a class="sidebar-nav-item{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{ end }}" href="{{ .URL }}">
+        <a
+            class="sidebar-nav-item{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{ end }}
+            {{ if eq .Identifier "logo" }} logo {{ end }}"
+            href="{{ .URL }}">
             {{ .Name }}
         </a>
     </li>
