@@ -37,29 +37,48 @@ nav a {
 		text-decoration: none;
 	}
 }
+
 .main-menu > ul {
-	text-align: left; /* centraliza na horizontal */
+	display: flex;
+
+	align-items: center;
+	justify-content: space-around;
+
+	margin-right: auto;
+	margin-left: auto;
+
+	text-align: center; /* centraliza na horizontal */
 }
 
 .main-menu > ul > li {
 	display: inline-block; /* centraliza na horizontal */
 
-	margin: 8em 2em;
+	// width: 8em;
+
+	// margin: 8em 2em;
+
+	&::before {
+		content: '';
+	}
 }
 
-.main-menu-2 > ul {
-	text-align: right; /* centraliza na horizontal */
-}
+.logo {
+	@include image-replacement;
 
-.main-menu-2 > ul > li {
-	display: inline-block; /* centraliza na horizontal */
+	display: inline-block;
 
-	margin: 8em 2em;
-}
+	width: 13.1em;
+	height: 13.1em;
 
+	margin-right: -2.1em;
+	margin-left: 0;
 
-.current > a {
-	pointer-events: none;
+	text-align: center;
+	text-decoration: none;
+	text-indent: calc(100% + 2.1em);
+
+	background-image: image('logo-radar.png');
+	background-position: center center;
 }
 
 
