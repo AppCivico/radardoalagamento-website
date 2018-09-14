@@ -26,18 +26,68 @@ nav li {
 
 menu a,
 nav a {
-	display: block;
+  overflow: hidden;
 
-	overflow: hidden;
+  font-weight: 900;
+  font-size: 10px;
 
-	&:link {
-		text-decoration: none;
+  color: palette('blue', 'dark');
+
+  &:link {
+    text-decoration: none;
+  }
+
+  @media screen and (min-width: breakpoint('wide')) {
+    font-size: 20px;
+  }
+}
+
+.main-menu > ul {
+	display: flex;
+
+	align-items: center;
+	justify-content: space-around;
+
+	margin-right: auto;
+	margin-left: auto;
+
+	text-align: center; /* centraliza na horizontal */
+}
+
+.main-menu > ul > li {
+	display: inline-block; /* centraliza na horizontal */
+
+	&::before {
+		content: '';
 	}
 }
 
-.current > a {
-	pointer-events: none;
+.logo {
+	@include image-replacement;
+
+	display: inline-block;
+    background-image: image('logo-radar-320px.png');
+
+	width: 13.1em;
+	height: 13.1em;
+
+	margin-right: -2.1em;
+	margin-left: 0;
+
+	text-align: center;
+	text-decoration: none;
+	text-indent: calc(100% + 2.1em);
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    background-image: image('logo-radar-960px.png');
+  }
+
+  @media screen and (min-width: breakpoint('wide')) {
+    background-image: image('logo-radar.png');
+  }
+	background-position: center center;
 }
+
 
 
 /* access

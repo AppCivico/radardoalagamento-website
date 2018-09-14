@@ -14,6 +14,34 @@ pluralizeListTitles: false
 
 FootnoteReturnLinkContents: "↩"
 
+menu:
+  main:
+    - Name: "HOME"
+      Pre: ""
+      Weight: 1
+      Identifier: "home"
+      URL: "/"
+    - Name: "SOBRE"
+      Pre: ""
+      Weight: 2
+      Identifier: "sobre"
+      URL: "/sobre/"
+    - Name: "HOME"
+      Pre: ""
+      Weight: 3
+      Identifier: "logo"
+      URL: "/"
+    - Name: "SENSORES"
+      Pre: ""
+      Weight: 4
+      Identifier: "sensores"
+      URL: "/sensores/"
+    - Name: "REGIÕES"
+      Pre: ""
+      Weight: 5
+      Identifier: "regioes"
+      URL: "/regioes/"
+
 params:
   description: "O Radar do Alagamento tem como base os dados sensores espalhados por todo a cidade. Além dos sensores da prefeitura, também possível que você, morador, possa construir e instalar o seu próprio sensor e integrá-lo a nossa base de dados."
   subtitle:      "Radar do alagamento"
