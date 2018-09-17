@@ -1,1 +1,42 @@
+{{ partial "header-default" . }}
 
+    <section class="regioes">
+
+            <h1> São Paulo </h1>
+
+        <ul class="regioes-list">
+
+            <li>
+                {{ range where .Site.Pages ".File.TranslationBaseName" "centro" }}
+                    <a href="/regioes/centro/"> {{ .Title }} </a>
+                {{ end }}
+            </li>
+
+            <li>
+                {{ range where .Site.Pages ".File.TranslationBaseName" "leste" }}
+                <a href="/regioes/leste/">  {{ .Title }} </a>
+                {{ end }}
+            </li>
+
+            <li>
+                {{ range where .Site.Pages ".File.TranslationBaseName" "norte" }}
+                <a href="/regioes/norte"> {{ .Title }} </a>
+                {{ end }}
+            </li>
+
+            <li>
+                {{ range where .Site.Pages ".File.TranslationBaseName" "oeste" }}
+                <a href="/regioes/oeste"> {{ .Title }} </a>
+                {{ end }}
+            </li>
+            <li>
+                {{ range where .Site.Pages ".File.TranslationBaseName" "sul" }}
+                <a href="/regioes/sul"> {{ .Title }} </a>
+                {{ end }}
+            </li>
+
+        </ul>
+
+    </section>
+
+{{partial "footer-default" . }}
