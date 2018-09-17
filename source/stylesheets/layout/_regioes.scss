@@ -1,0 +1,70 @@
+.districts h1,
+.centro h1 {
+	margin-bottom: 3em;
+
+	font-size: 2em;
+
+	text-align: center;
+
+	color: palette('blue', 'dark');
+}
+
+.district-list {
+	column-width: 5em;
+
+	columns: 2;
+	@media screen and (min-width: breakpoint('wide')) {
+		margin-left: 15em;
+
+		column-gap: 17em;
+	}
+
+	& a {
+		font-weight: 800;
+
+		color: palette('blue', 'base');
+		&:link,
+		&:visited {
+			text-decoration: none;
+		}
+	}
+}
+
+.centro-list {
+	margin-left: 46%;
+
+	font-size: 1.3em;
+
+	column-width: 5em;
+	column-gap: 15em;
+
+	columns: 1;
+
+
+	& a {
+		font-weight: 800;
+
+		color: palette('blue', 'base');
+		&:link,
+		&:visited {
+			text-decoration: none;
+		}
+	}
+}
+
+ul {
+	list-style: none;
+}
+
+li::before {
+	display: inline-block;
+
+	width: 1em;
+
+	margin-bottom: 1.5em;
+	margin-left: -1em;
+
+	color: palette('blue', 'medium');
+
+	content: '•';
+}
