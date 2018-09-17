@@ -29,13 +29,16 @@
 	}
 }
 
-a {
-	color: palette('blue', 'base');
+.footer-container {
+	& a {
+		color: palette('blue', 'base');
+	}
+
+	& a:link {
+		text-decoration: none;
+	}
 }
 
-a:link {
-	text-decoration: none;
-}
 
 .big-link-parceiro {
 	@include image-replacement;
