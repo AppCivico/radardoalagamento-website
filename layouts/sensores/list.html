@@ -1,3 +1,21 @@
 {{partial "header-default" . }}
 
+
+<section class="content-list-sensor">
+
+    <h1> São Paulo </h1>
+
+<ul class="sensores-list">
+    {{ range .Data.Pages }}
+    <li>
+        <a href="/sensores/{{ .Title }}/"> {{ .Title }} </a>
+
+    </li>
+    {{ end }}
+
+</ul>
+
+</section>
+
+
 {{partial "footer-default" . }}
