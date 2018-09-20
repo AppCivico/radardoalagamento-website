@@ -14,11 +14,13 @@
 <body>
 <header>
 	<article class="site-header-default">
-
 		<section class="content-header">
-			<div class="header-height-default"></div>
-
-		</section>
+			{{ if ne .Kind "404" }}
+				<nav class="main-menu" id="menu">
+					{{ partialCached "menu.html" . }}
+				</nav>
+				{{ end }}
+		 </section>
 	</article>
 </header>
 
