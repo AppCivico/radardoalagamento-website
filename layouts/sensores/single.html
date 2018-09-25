@@ -30,7 +30,7 @@
         </tr>
          <tr>
             <th>id</th>
-            <td>{{ .Params.id }}</td>
+            <td data-id="{{ .Params.id }}">{{ .Params.id }}</td>
         </tr>
          <tr>
             <th>created_at</th>
@@ -51,11 +51,24 @@
         </tr>
         {{end}}
          <tr>
-            <td></td>
-            <!-- <td>{{ .Params }}</td> -->
+             <th>leituras</th>
+            <td id="abc"></td>
         </tr>
 
       </table>
+
+      <script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
+
+      <script>
+          lala = [];
+        axios.get('https://dtupa.eokoe.com/sensor/13/sample')
+          .then(function (response) {
+              console.log('lala->', response);
+            document.getElementById('abc').textContent = response.data.results[1].id
+            });
+
+    </script>
+
     </div>
 </section>
 
