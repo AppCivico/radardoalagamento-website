@@ -46,6 +46,23 @@
 		text-align: left;
 	}
 }
+.leituras-table {
+	margin-top: -8px;
+
+	border-spacing: 0 8px;
+
+	border-collapse: separate;
+
+	& th {
+		width: 25em;
+
+		text-align: left;
+	}
+
+	& td {
+		text-align: left;
+	}
+}
 
 
 //Page single

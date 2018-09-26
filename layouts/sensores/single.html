@@ -50,23 +50,48 @@
             <td>{{ . }}</td>
         </tr>
         {{end}}
+    </table>
+    <table class="leituras-table">
          <tr>
-             <th>leituras</th>
+             <th id="bb"></th>
             <td id="abc"></td>
         </tr>
+    </table>
 
-      </table>
+    <h1>Leituras</h1>
+    <table id="leituras" class="leituras-table">
+            <tbody>
+
+            </tbody>
+          </table>
+
+
 
       <script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
 
       <script>
-          lala = [];
-        axios.get('https://dtupa.eokoe.com/sensor/13/sample')
+
+
+        axios.get('https://dtupa.eokoe.com/sensor/{{ .Params.id }}/sample')
           .then(function (response) {
-              console.log('lala->', response);
-            document.getElementById('abc').textContent = response.data.results[1].id
+            results = response.data.results;
+            leituras = document.querySelector('#leituras tbody');
+            tbody = '';
+
+
+
+
+            Object.keys(results).forEach(function(key) {
+                Object.keys(results[key]).forEach(function(innerKey) {
+
+                    console.log(innerKey + ': ' + results[key][innerKey]);
+                    tbody += "<tr><th>" + innerKey + "</th><td>" + results[key][innerKey] + "</td></tr>";
+
+            leituras.innerHTML = tbody;
+                });
             });
 
+    });
     </script>
 
     </div>
