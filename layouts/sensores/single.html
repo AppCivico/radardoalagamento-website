@@ -75,21 +75,20 @@
         axios.get('https://dtupa.eokoe.com/sensor/{{ .Params.id }}/sample')
           .then(function (response) {
             results = response.data.results;
-            leituras = document.querySelector('#leituras tbody');
+            leituras = document.querySelector('#leituras');
             tbody = '';
 
-
-
-
             Object.keys(results).forEach(function(key) {
+                tbody += '<tbody class="lala">';
                 Object.keys(results[key]).forEach(function(innerKey) {
 
                     console.log(innerKey + ': ' + results[key][innerKey]);
                     tbody += "<tr><th>" + innerKey + "</th><td>" + results[key][innerKey] + "</td></tr>";
-
-            leituras.innerHTML = tbody;
-                });
+                    });
+                tbody += '</tbody>'
             });
+
+        leituras.innerHTML = tbody;
 
     });
     </script>
