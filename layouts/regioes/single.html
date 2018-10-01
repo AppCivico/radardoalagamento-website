@@ -6,7 +6,7 @@
     <ul class="district-list">
         {{ range .Params.districts }}
             <li>
-                {{ .name }}
+               <a href="/distritos/{{ .id }}"> {{ .name }} </a>
 
                 {{ end }}
             </li>
