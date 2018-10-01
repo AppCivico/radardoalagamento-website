@@ -12,5 +12,13 @@
     "contentFolder": "./content/sensores",
     "contentField": "description",
     "jsonRootElement": "results"
+  },
+
+  {
+    "url": "/district?no_paging=1",
+    "dataDest": "./static/assets/data/district.json",
+    "contentFolder": "./content/distritos",
+    "contentField": "description",
+    "jsonRootElement": "results"
   }
 ]
