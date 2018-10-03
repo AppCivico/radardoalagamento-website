@@ -5,11 +5,14 @@
     <h1> {{ .Title }} </h1>
     <ul class="district-list">
         {{ range .Params.districts }}
-            <li>
-               <a href="/distritos/{{ .id }}"> {{ .name }} </a>
 
-                {{ end }}
-            </li>
+        <li>
+
+
+            {{ .name }}
+
+        </li>
+        {{ end }}
 
     </ul>
 

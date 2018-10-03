@@ -1,3 +1,35 @@
 {{ partial "header-default" . }}
 
+<section class="districts">
+
+    <h1> {{ .Params.slug  }} </h1>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
+
+    <script>
+
+
+        axios.get('https://dtupa.eokoe.com/district/{{ Params.id }}/sensor')
+            .then(function (response) {
+                results = response.data.results;
+                leituras = document.querySelector('#leituras');
+                tbody = '';
+
+                Object.keys(results).forEach(function(key) {
+                    tbody += '<tbody class="lala">';
+                    Object.keys(results[key]).forEach(function(innerKey) {
+
+                        console.log(innerKey + ': ' + results[key][innerKey]);
+                        tbody += "<tr><th>" + innerKey + "</th><td>" + results[key][innerKey] + "</td></tr>";
+                    });
+                    tbody += '</tbody>'
+                });
+
+                leituras.innerHTML = tbody;
+
+            });
+    </script>
+
+</section>
+
 {{partial "footer-default" . }}
