@@ -1,5 +1,5 @@
 ---
-date: 2018-10-01T21:09:41.313Z
+date: 2018-10-03T15:28:31.048Z
 draft: false
 title: "Pari"
 id: 94
