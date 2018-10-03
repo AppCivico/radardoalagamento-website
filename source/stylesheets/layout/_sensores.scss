@@ -46,6 +46,23 @@
 		text-align: left;
 	}
 }
+.leituras-table {
+	margin-top: -8px;
+
+	border-spacing: 0 8px;
+
+	border-collapse: separate;
+
+	& th {
+		width: 25em;
+
+		text-align: left;
+	}
+
+	& td {
+		text-align: left;
+	}
+}
 
 
 //Page single
@@ -69,7 +86,7 @@
 	column-width: 5em;
 	column-gap: 15em;
 
-	columns: 4;
+	columns: 3;
 
 
 	& a {
