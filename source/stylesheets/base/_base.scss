@@ -61,21 +61,6 @@ textarea,
 	touch-action: manipulation; /* 1 */
 }
 
-:target {
-	animation: highlight 0.8s ease-out;
-
-	@keyframes highlight {
-		// sass-lint:disable-block no-color-literals
-		0% {
-			background-color: rgba(palette('target-highlight'), 1);
-		}
-
-		100% {
-			background-color: rgba(palette('target-highlight'), 0);
-		}
-	}
-}
-
 /**
  * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
  * http://clagnut.com/blog/348/#c790
@@ -91,14 +76,14 @@ html {
 
 	padding: 0;
 	margin: 0;
-
 	/* 3 */
+
 	overflow-y: scroll;
-
 	/* 1 */
-	font-size: 100.01%;
 
+	font-size: 100.01%;
 	/* 4 */
+
 	text-size-adjust: 100%;
 
 	background: palette('white');
@@ -156,6 +141,7 @@ summary {
 
 	&::before {
 		padding-right: 0.5em;
+
 		content: '\25B6';
 	}
 
@@ -209,21 +195,21 @@ hr {
 	clear: both;
 
 	display: block;
-
 	/* 1 */
+
 	height: 0;
 
 	padding: 0;
-
 	/* 2 */
+
 	overflow: visible;
 
 	color: palette('gray');
 
 	border: 0;
 	border-top: 1px solid palette('gray');
-
 	/* 1 */
+
 	box-sizing: content-box;
 }
 
@@ -260,8 +246,8 @@ svg,
 video {
 	/* 1 */
 	display: inline-block;
-
 	/* 2 */
+
 	vertical-align: middle;
 }
 
