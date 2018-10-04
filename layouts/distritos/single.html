@@ -1,0 +1,69 @@
+{{ partial "header-default" . }}
+
+<section class="districts">
+
+    <h1> {{ .Title }} </h1>
+
+    <table id="especific-sensores" class="leituras-table">
+            <tbody>
+
+            </tbody>
+          </table>
+
+    <table id="leituras" class="leituras-table">
+            <tbody>
+
+            </tbody>
+        </table>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
+
+    <script>
+
+
+      axios.get('https://dtupa.eokoe.com/district/{{ .Params.id }}/sensor')
+        .then(function (response) {
+          results = response.data.results;
+          especificSensores = document.querySelector('#especific-sensores');
+          tbody = '';
+
+          Object.keys(results).forEach(function(key) {
+              tbody += '<h2>Sensor</h2>' + '<tbody>';
+              Object.keys(results[key]).forEach(function(innerKey) {
+
+                  tbody += "<tr><th>" + innerKey + "</th><td>" + results[key][innerKey] + "</td></tr>";
+                  });
+              tbody += '</tbody>'
+          });
+
+      especificSensores.innerHTML = tbody;
+
+  });
+  </script>
+
+<script>
+
+
+        axios.get('https://dtupa.eokoe.com/sensor/{{ .Params.id }}/sample')
+        .then(function (response) {
+            results = response.data.results;
+            leituras = document.querySelector('#leituras');
+            tbody = '';
+
+            Object.keys(results).forEach(function(key) {
+                tbody += '<h2>Leitura</h2>' +'<tbody>';
+                Object.keys(results[key]).forEach(function(innerKey) {
+
+                    tbody += "<tr><th>" + innerKey + "</th><td>" + results[key][innerKey] + "</td></tr>";
+                    });
+                tbody += '</tbody>'
+            });
+
+        leituras.innerHTML = tbody;
+
+    });
+    </script>
+
+</section>
+{{partial "footer-default" . }}

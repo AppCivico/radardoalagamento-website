@@ -1,0 +1,103 @@
+.div-table-sensores {
+	padding: 2em;
+
+	background: palette('white');
+
+	border: solid 2px palette('black');
+
+	& h1 {
+		margin-top: 2em;
+		margin-bottom: 1em;
+	}
+}
+
+.sensores-table {
+	margin-top: -8px;
+
+	border-spacing: 0 8px;
+
+	border-collapse: separate;
+
+	& th {
+		width: 25em;
+
+		text-align: left;
+	}
+
+	& td {
+		text-align: left;
+	}
+}
+
+.fontes-table {
+	margin-top: -8px;
+
+	border-spacing: 0 8px;
+
+	border-collapse: separate;
+
+	& th {
+		width: 25em;
+
+		text-align: left;
+	}
+
+	& td {
+		text-align: left;
+	}
+}
+
+.leituras-table {
+	margin-top: -8px;
+
+	border-spacing: 0 8px;
+
+	border-collapse: separate;
+
+	& th {
+		width: 25em;
+
+		text-align: left;
+	}
+
+	& td {
+		text-align: left;
+	}
+}
+
+
+//Page single
+
+.content-list-sensor h1 {
+	margin-bottom: 3em;
+
+	font-size: 2em;
+
+	text-align: center;
+
+	color: palette('blue', 'dark');
+}
+
+.sensores-list {
+	margin-right: auto;
+	margin-left: auto;
+
+	font-size: 1.3em;
+
+	column-width: 5em;
+	column-gap: 15em;
+
+	columns: 3;
+
+
+	& a {
+		font-weight: 800;
+
+		color: palette('blue', 'base');
+
+		&:link,
+		&:visited {
+			text-decoration: none;
+		}
+	}
+}

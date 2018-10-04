@@ -1,0 +1,24 @@
+
+#notFoundPage
+- id: 404Title
+  translation: "Não encontrado"
+- id: 404Text
+  translation: "Essa página não foi encontrada"
+- id: returnToHome
+  translation: "Retornar para página inicial?"
+
+#sharing
+- id: sharing
+  translation: "Compartilhamento"
+#contribution
+- id: contribution
+  translation: "Contribuição"
+#notification
+- id: notification
+  translation: "Notificação"
+#about-app
+- id: about app
+  translation: "Sobre o App"
+#about-sensor
+- id: about sensor
+  translation: "Sobre os sensores"

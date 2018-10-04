@@ -1,0 +1,56 @@
+baseURL:         "http://radardoalagamento.org.br"
+languageCode:    "pt-br"
+title:           "Radar do alagamento"
+disableKinds:    ["taxonomy", "taxonomyTerm", "RSS"]
+enableRobotsTXT: true
+metaDataFormat:  "yaml"
+enableMissingTranslationPlaceholders: true
+defaultContentLanguage: pt
+disableFastRender: true
+ignoreFiles: [ "\\.tmp$", "\\.tmp\\-browserify" ]
+stepAnalysis: true
+templateMetrics: true
+pluralizeListTitles: false
+
+FootnoteReturnLinkContents: "↩"
+
+menu:
+  main:
+    - Name: "HOME"
+      Pre: ""
+      Weight: 1
+      Identifier: "home"
+      URL: "/"
+    - Name: "SOBRE"
+      Pre: ""
+      Weight: 2
+      Identifier: "sobre"
+      URL: "/#sobre"
+    - Name: "HOME"
+      Pre: ""
+      Weight: 3
+      Identifier: "logo"
+      URL: "/"
+    - Name: "REGIÕES"
+      Pre: ""
+      Weight: 4
+      Identifier: "regioes"
+      URL: "/regioes/"
+    - Name: "SENSORES"
+      Pre: ""
+      Weight: 5
+      Identifier: "sensores"
+      URL: "/sensores/"
+
+
+params:
+  description: "O Radar do Alagamento tem como base os dados sensores espalhados por todo a cidade. Além dos sensores da prefeitura, também possível que você, morador, possa construir e instalar o seu próprio sensor e integrá-lo a nossa base de dados."
+  subtitle:      "Radar do alagamento"
+  authorName:    "Natiene"
+  gitHubUser:    "AppCivico"
+
+  author:
+    Radar:
+      name: "Radar do Alagamento"
+      link: "http://radardoalagamento.org.br"
+      logo: ""

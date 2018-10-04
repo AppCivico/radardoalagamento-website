@@ -1,0 +1,24 @@
+[
+  {
+    "url": "/zone",
+    "dataDest": "./static/assets/data/zone.json",
+    "contentFolder": "./content/regioes",
+    "jsonRootElement": "results"
+  },
+
+  {
+    "url": "/sensor",
+    "dataDest": "./static/assets/data/sensor.json",
+    "contentFolder": "./content/sensores",
+    "contentField": "description",
+    "jsonRootElement": "results"
+  },
+
+  {
+    "url": "/district?no_paging=1",
+    "dataDest": "./static/assets/data/district.json",
+    "contentFolder": "./content/distritos",
+    "contentField": "description",
+    "jsonRootElement": "results"
+  }
+]

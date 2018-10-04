@@ -1,0 +1,13 @@
+<article id="sobre" class="about-sensor">
+{{ range where .Site.Pages ".File.TranslationBaseName" "sensor"}}
+    <section  class="sensor">
+        <div class="about-sensor-content">
+        <h1 class="about-sensor-title">{{ .Title }}</h1>
+
+            {{ .Content }}
+        </div>
+
+
+    </section>
+{{ end }}
+</article>

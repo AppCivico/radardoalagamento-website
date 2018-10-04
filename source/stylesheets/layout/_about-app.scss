@@ -1,0 +1,60 @@
+.about-app-image {
+	display: block;
+
+	margin-right: auto;
+	margin-left: auto;
+
+	text-align: center;
+	@media screen and (min-width: breakpoint('wide')) {
+		display: inline-block;
+
+		width: 15em;
+		height: 10em;
+
+		padding: 2em;
+		margin-left: 17.4em;
+	}
+}
+
+.about-app-content {
+	display: block;
+
+	margin-top: 3em;
+	margin-right: auto;
+	margin-left: auto;
+
+	@media screen and (min-width: breakpoint('wide')) {
+		display: inline-block;
+
+		width: 28%;
+
+		vertical-align: 15px;
+
+		color: palette('text-content', 'black');
+	}
+}
+
+.about-app-icon {
+	display: none;
+
+	@media screen and (min-width: breakpoint('wide')) {
+		display: inline-block;
+
+		margin-right: 5em;
+		margin-left: 5em;
+
+		vertical-align: 100%;
+	}
+}
+
+.about-app-title {
+	color: palette('text-content', 'blue-light');
+}
+
+.sharing {
+	margin-top: 5em;
+}
+
+.contribution {
+	margin-top: 5em;
+}

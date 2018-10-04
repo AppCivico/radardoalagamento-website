@@ -1,0 +1,91 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+
+/**
+ * A large perceivable region that contains information about the parent document.
+ *
+ * Examples of information included in this region of the page are copyrights and links to privacy statements.
+ *
+ * Within any `document` or `application`, the author **SHOULD** mark no more than one element with the `contentinfo` role.
+ */
+[role='contentinfo'] {
+}
+
+.footer-site {
+	margin: auto;
+
+	text-align: center;
+	vertical-align: top;
+
+	color: palette('text-content', 'white');
+
+	background-color: palette('blue', 'dark');
+	@media screen and (min-width: breakpoint('tablet')) {
+		margin: 0;
+
+		text-align: left;
+	}
+}
+
+.footer-container {
+	& a {
+		color: palette('blue', 'base');
+	}
+
+	& a:link {
+		text-decoration: none;
+	}
+}
+
+
+.big-link-parceiro {
+	@include image-replacement;
+
+	display: inline-block;
+
+	width: 5.5rem;
+	height: 3.5rem;
+
+	margin-right: 0.2rem;
+	margin-left: 0;
+
+	text-align: center;
+	text-decoration: none;
+}
+
+.link-parceiro--nicbr {
+	background-image: image('logo-nicbr.png');
+	background-position: center center;
+}
+
+.link-parceiro--w3c {
+	background-image: image('logo-w-3-c.png');
+	background-position: center center;
+}
+
+.link-parceiro--appcivico {
+	background-image: image('logo-appcivico.png');
+	background-position: center center;
+}
+
+.footer-contato {
+	@media screen and (min-width: breakpoint('tablet')) {
+		display: inline-block;
+
+		width: 40%;
+	}
+}
+
+.footer-parceiro {
+	@media screen and (min-width: breakpoint('tablet')) {
+		display: inline-block;
+
+		width: 40%;
+
+		margin-left: 4%;
+
+		white-space: 1em;
+	}
+}

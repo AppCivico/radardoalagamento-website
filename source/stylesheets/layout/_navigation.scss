@@ -1,0 +1,151 @@
+/* navigation
+---------------------------------------------------------------------------- */
+menu,
+nav {
+}
+
+menu ul,
+menu ol,
+nav ul,
+nav ol {
+	padding: 0;
+	margin: 0;
+
+	list-style: none;
+}
+
+menu li,
+nav li {
+	padding: 0;
+	margin: 0;
+
+	&::before {
+		content: none;
+	}
+}
+
+menu a,
+nav a {
+	overflow: hidden;
+
+	font-weight: 900;
+	font-size: 1.25em;
+
+	color: palette('blue', 'dark');
+
+	&:link {
+		text-decoration: none;
+	}
+	@media screen and (min-width: breakpoint('phone')) {
+		font-size: 0.4em;
+	}
+
+	@media screen and (min-width: breakpoint('phablet')) {
+		font-size: 1.25em;
+	}
+
+	@media screen and (min-width: breakpoint('tablet')) {
+		font-size: 1.25em;
+	}
+
+	@media screen and (min-width: breakpoint('desktop')) {
+		font-size: 1.25em;
+	}
+
+	@media screen and (min-width: breakpoint('wide')) {
+		font-size: 1.25em;
+	}
+}
+
+.main-menu > ul {
+	display: flex;
+
+	align-items: center;
+	justify-content: space-around;
+
+	margin-right: auto;
+	margin-left: auto;
+
+	text-align: center; /* centraliza na horizontal */
+}
+
+.main-menu > ul > li {
+	display: inline-block; /* centraliza na horizontal */
+
+	&::before {
+		content: '';
+	}
+}
+
+.logo {
+	@include image-replacement;
+
+	display: inline-block;
+
+	width: 13.1em;
+	height: 13.1em;
+
+	margin-right: -2.1em;
+	margin-left: 0;
+
+	text-align: center;
+	text-decoration: none;
+	text-indent: calc(100% + 2.1em);
+
+	background-image: image('logo-radar-320px.png');
+	background-position: center center;
+
+	@media screen and (min-width: breakpoint('desktop')) {
+		background-image: image('logo-radar-960px.png');
+	}
+
+	@media screen and (min-width: breakpoint('wide')) {
+		background-image: image('logo-radar.png');
+	}
+}
+
+
+
+/* access
+---------------------------------------------------------------------------- */
+.skip-links {
+}
+
+/* pagination
+---------------------------------------------------------------------------- */
+.pagination {
+}
+
+.pagination__current {
+}
+
+.pagination__previous {
+}
+
+.pagination__next {
+}
+
+
+/// .menu-controller styles
+///
+/// @group helpers
+///
+/// @example html
+/// <label for="menu-controller" onclick>menu</label>
+///
+
+[for='menu-controller'] {
+	&::before {
+		font-size: 2em;
+		line-height: 0.75;
+		font-family: sans-serif;
+
+		vertical-align: middle;
+
+		content: '\20\2261\20';
+	}
+
+	@media screen and (min-width: breakpoint('toggle-menu')) {
+		display: none;
+	}
+}

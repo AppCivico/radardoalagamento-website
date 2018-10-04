@@ -1,0 +1,54 @@
+<article class="about-app">
+{{ range where .Site.Pages ".File.TranslationBaseName" "notification"}}
+<section class="notification">
+   <div class="about-app-image">
+       <img src="{{ .Params.image }}" alt="{{ .Title }}">
+   </div>
+   <div class="about-app-icon">
+       <img src="{{ .Params.icon }}" alt="{{ .Title }}">
+   </div>
+    <div class="about-app-content">
+    <h1 class="about-app-title">{{ .Title }}</h1>
+
+        {{ .Content }}
+  </div>
+
+
+</section>
+{{ end }}
+
+{{ range where .Site.Pages ".File.TranslationBaseName" "sharing"}}
+<section class="sharing">
+    <div class="about-app-image">
+        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+    </div>
+    <div class="about-app-icon">
+        <img src="{{ .Params.icon }}" alt="{{ .Title }}">
+    </div>
+    <div class="about-app-content">
+      <h1 class="about-app-title">{{ .Title }}</h1>
+
+          {{ .Content }}
+    </div>
+
+  </section>
+{{ end }}
+
+{{ range where .Site.Pages ".File.TranslationBaseName" "contribution"}}
+  <section class="contribution">
+      <div class="about-app-image">
+        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+      </div>
+      <div class="about-app-icon">
+        <img src="{{ .Params.icon }}" alt="{{ .Title }}">
+     </div>
+      <div class="about-app-content">
+        <h1 class="about-app-title">{{ .Title }}</h1>
+            {{ .Content }}
+      </div>
+
+    </section>
+{{ end }}
+
+</article>
+

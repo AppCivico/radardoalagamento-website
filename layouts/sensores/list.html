@@ -1,0 +1,105 @@
+{{partial "header-default" . }}
+
+
+<section class="content-list-sensor">
+
+    <h1> São Paulo </h1>
+
+<ul id="sensores" class="sensores-list">
+</ul>
+
+<table id="sensor" class="leituras-table">
+        <tbody>
+
+        </tbody>
+      </table>
+<table id="leituras" class="leituras-table">
+    <tbody>
+
+    </tbody>
+</table>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
+
+
+
+<script>
+    function getQueryString(url = window.location.search) {
+    const queryString = url.indexOf('?') !== -1
+        ? url.split('?')[1]
+        : [];
+    const params = {};
+    const queries = queryString.indexOf('&') !== -1
+        ? queryString.split('&')
+        : [queryString];
+    for (let i = 0; i < queries.length; i += 1) {
+        const element = queries[i].indexOf('=') !== -1
+        ? queries[i].split('=')
+        : [queries[i], null];
+        params[decodeURIComponent(element[0])] = decodeURIComponent(element[1] || '');
+    }
+    return params;
+    }
+
+    var sensorId = getQueryString().id || null;
+
+    if (sensorId) {
+        axios.get('https://dtupa.eokoe.com/sensor/' + sensorId)
+          .then(function (response) {
+            results = response.data;
+            leituras = document.querySelector('#sensor');
+            tbody = '';
+
+                tbody += '<h2>Sensor</h2>' + '<tbody>';
+                Object.keys(results).forEach(function(key) {
+                    tbody += "<tr><th>" + key + "</th><td>" + results[key] + "</td></tr>";
+                    });
+                tbody += '</tbody>'
+
+
+        sensor.innerHTML = tbody;
+
+    });
+
+        axios.get('https://dtupa.eokoe.com/sensor/' + sensorId + '/sample')
+          .then(function (response) {
+            results = response.data.results;
+            leituras = document.querySelector('#leituras');
+            tbody = '';
+
+            Object.keys(results).forEach(function(key) {
+                tbody += '<h2>Leitura</h2>' +'<tbody>';
+                Object.keys(results[key]).forEach(function(innerKey) {
+
+                    tbody += "<tr><th>" + innerKey + "</th><td>" + results[key][innerKey] + "</td></tr>";
+                    });
+                tbody += '</tbody>'
+            });
+
+        leituras.innerHTML = tbody;
+
+    });
+
+    } else {
+        axios.get('https://dtupa.eokoe.com/sensor/')
+            .then(function (response) {
+            results = response.data.results;
+            sensores = document.querySelector('#sensores');
+            listContent = '';
+
+            results.forEach(function(sensor){
+                var urlEscapdeName = sensor.id;
+
+                listContent+= '<li><a href="/sensores?id='+urlEscapdeName+'">'+sensor.name+'</a></li>';
+            });
+
+            sensores.innerHTML = listContent;
+
+        });
+    }
+
+    </script>
+</section>
+
+{{partial "footer-default" . }}

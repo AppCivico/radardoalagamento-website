@@ -1,0 +1,22 @@
+{
+	"initial" : {
+		"clickable": false,
+		"strokeColor": "#fff",
+		"strokeOpacity": 1,
+		"strokeWeight": 2,
+		"fillColor": "#1b0863",
+		"fillOpacity": 0.5
+	},
+
+	"toggle" : {
+		"fillOpacity": 0.75
+	},
+
+	"city" : {
+		"clickableIcons": false,
+		"fillOpacity": 0,
+		"strokeColor": "#42eeff",
+		"strokeWeight": 3,
+		"zIndex": -1
+	}
+}

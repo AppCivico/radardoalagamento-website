@@ -1,0 +1,81 @@
+.about-sensor-title {
+	color: palette('text-content', 'white');
+}
+
+.sensor {
+	color: palette('text-content', 'black');
+
+	background-image: image('mockup-interface-2-320px.png'),
+	image('elementoa-320px.png'),
+	image('elementog-320px.png'),
+	image('elementod-320px.png'),
+	image('elementob-320px.png'),
+	image('elementoc-320px.png'),
+	image('elementof-320px.png'),
+	image('elementoe-320px.png'),
+	image('elementoh-320px.png');
+	background-position: top 10% left 50%,
+	bottom 70% left 60%,
+	top 8% left 15%,
+	bottom 70% left 47%,
+	top 8% right 18%,
+	top 18% right 20%,
+	top 27% right 15%,
+	top 21% left 24%,
+	top 9% left 27%;
+
+	@media screen and (min-width: breakpoint('wide')) {
+		background-image: image('mockup-interface-2.png'),
+		image('elementoa.png'),
+		image('elementog.png'),
+		image('elementod.png'),
+		image('elementob.png'),
+		image('elementoc.png'),
+		image('elementof.png'),
+		image('elementoe.png'),
+		image('elementoh.png');
+		background-position: top left 10%,
+		bottom 13% left 34%,
+		top left,
+		bottom 20% left 24%,
+		top right 49%,
+		top 30% right 50%,
+		top 70% right 47%,
+		top 55% left 7%,
+		top 3% left 11%;
+	}
+}
+
+.about-sensor {
+	background-color: palette('blue', 'base');
+	@media screen and (min-width: breakpoint('wide')) {
+		padding: 5em;
+	}
+}
+
+.about-sensor-content {
+	width: 100%;
+
+	margin-top: 20em;
+	margin-right: auto;
+	margin-left: auto;
+
+	h1 {
+		font-size: 2.2em;
+		line-height: 4rem;
+	}
+
+	@media screen and (min-width: breakpoint('wide')) {
+		width: 30%;
+
+		margin-top: 0;
+		margin-left: 50em;
+
+		line-height: 1.5rem;
+
+		h1 {
+			font-size: 3.4em;
+			line-height: 4rem;
+		}
+	}
+}
