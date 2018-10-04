@@ -29,7 +29,6 @@ nav a {
 	overflow: hidden;
 
 	font-weight: 900;
-	font-size: 1.25em;
 
 	color: palette('blue', 'dark');
 
@@ -37,7 +36,7 @@ nav a {
 		text-decoration: none;
 	}
 	@media screen and (min-width: breakpoint('phone')) {
-		font-size: 0.4em;
+		font-size: 0.55em;
 	}
 
 	@media screen and (min-width: breakpoint('phablet')) {
@@ -85,14 +84,14 @@ nav a {
 	width: 13.1em;
 	height: 13.1em;
 
-	margin-right: -2.1em;
+	margin-right: -1.8em;
 	margin-left: 0;
 
 	text-align: center;
 	text-decoration: none;
 	text-indent: calc(100% + 2.1em);
 
-	background-image: image('logo-radar-320px.png');
+	background-image: image('logo-radar-480px.png');
 	background-position: center center;
 
 	@media screen and (min-width: breakpoint('desktop')) {
@@ -100,6 +99,8 @@ nav a {
 	}
 
 	@media screen and (min-width: breakpoint('wide')) {
+		margin-right: -2.1em;
+
 		background-image: image('logo-radar.png');
 	}
 }
