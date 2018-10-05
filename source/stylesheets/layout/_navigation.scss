@@ -29,16 +29,12 @@ nav a {
 	overflow: hidden;
 
 	font-weight: 900;
+	font-size: 0.55em;
 
 	color: palette('blue', 'dark');
 
 	&:link {
-		width: 12em;
-
 		text-decoration: none;
-	}
-	@media screen and (min-width: breakpoint('phone')) {
-		font-size: 0.55em;
 	}
 
 	@media screen and (min-width: breakpoint('phablet')) {
@@ -86,8 +82,8 @@ nav a {
 	width: 10.1em;
 	height: 10.1em;
 
-	margin-right: auto;
-	margin-left: auto;
+	margin-right: -0.8em;
+	margin-left: 0;
 
 	text-align: center;
 	text-decoration: none;
