@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T15:28:31.047Z
+date: 2018-10-09T18:42:29.833Z
 draft: false
 title: "Mandaqui"
 id: 71
