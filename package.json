@@ -19,7 +19,7 @@
     "build:sass": "npm-run-all scss autoprefixer nano",
     "build:fonts": "cpy \"./source/fonts/*\" \"static/assets/fonts\"",
     "build:img": "npm run compress:img",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "snyk test",
     "lint": "npm run lint:sass",
     "lint:sass": "sass-lint \"./source/stylesheets/**/*.scss\" --verbose --no-exit --format junit --output ./_testReports/sassLint.xml",
     "dev": "npm-run-all build:* --parallel watch start:*",
@@ -70,7 +70,8 @@
     "susy": "^3.0.3",
     "svgo": "^1.0.5",
     "uglify-js": "^3.3.13",
-    "version-changelog": "^3.1.0"
+    "version-changelog": "^3.1.0",
+    "snyk": "^1.88.2"
   },
   "dependencies": {
     "axios": "^0.18.0"
