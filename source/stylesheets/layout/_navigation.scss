@@ -42,7 +42,7 @@ nav a {
 	}
 
 	@media screen and (min-width: breakpoint('tablet')) {
-		font-size: 1.25em;
+		font-size: 1.1em;
 	}
 
 	@media screen and (min-width: breakpoint('desktop')) {
@@ -91,6 +91,16 @@ nav a {
 
 	background-image: image('logo-radar-480px.png');
 	background-position: center center;
+
+	@media screen and (min-width: breakpoint('tablet')) {
+		width: 13.1em;
+		height: 13.1em;
+
+		margin-right: -1.8em;
+		margin-left: 0;
+
+		background-image: image('logo-radar-640px.png');
+	}
 
 	@media screen and (min-width: breakpoint('desktop')) {
 		width: 13.1em;
