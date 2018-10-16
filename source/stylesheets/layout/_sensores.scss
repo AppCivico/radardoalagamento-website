@@ -71,24 +71,33 @@
 .content-list-sensor h1 {
 	margin-bottom: 3em;
 
-	font-size: 2em;
-
-	text-align: center;
+	text-align: left;
 
 	color: palette('blue', 'dark');
+
+	@media screen and (min-width: breakpoint('desktop')) {
+		font-size: 2em;
+
+		text-align: center;
+	}
 }
 
 .sensores-list {
 	margin-right: auto;
 	margin-left: auto;
 
-	font-size: 1.3em;
+	@media screen and (min-width: breakpoint('tablet')) {
+		columns: 2;
+	}
 
-	column-width: 5em;
-	column-gap: 15em;
+	@media screen and (min-width: breakpoint('desktop')) {
+		font-size: 1.3em;
 
-	columns: 3;
+		column-width: 5em;
+		column-gap: 15em;
 
+		columns: 3;
+	}
 
 	& a {
 		font-weight: 800;
