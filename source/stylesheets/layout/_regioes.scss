@@ -1,12 +1,28 @@
+.districts {
+	word-wrap: break-word;
+}
+
 .districts h1,
 .regioes h1 {
-	margin-bottom: 3em;
+	margin-bottom: 1.5em;
 
-	font-size: 2em;
+	font-size: 1.3em;
 
-	text-align: center;
+	text-align: left;
 
 	color: palette('blue', 'dark');
+
+	@media screen and (min-width: breakpoint('desktop')) {
+		font-size: 2em;
+	}
+}
+
+.districts h2 {
+	@media screen and (min-width: breakpoint('phone')) {
+		margin-bottom: 3em;
+
+		font-size: 1.1em;
+	}
 }
 
 .district-list {

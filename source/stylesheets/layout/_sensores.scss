@@ -55,13 +55,30 @@
 	border-collapse: separate;
 
 	& th {
-		width: 25em;
+		width: 20em;
 
 		text-align: left;
+		@media screen and (min-width: breakpoint('phone')) {
+			font-size: 0.8em;
+		}
+		@media screen and (min-width: breakpoint('tablet')) {
+			width: 25em;
+
+			font-size: 0.8em;
+		}
 	}
 
 	& td {
 		text-align: left;
+		@media screen and (min-width: breakpoint('phone')) {
+			font-size: 0.8em;
+		}
+	}
+
+	& h2 {
+		@media screen and (min-width: breakpoint('phone')) {
+			font-size: 1.1em;
+		}
 	}
 }
 
@@ -69,13 +86,17 @@
 //Page single
 
 .content-list-sensor h1 {
-	margin-bottom: 3em;
+	margin-bottom: 1.5em;
+
+	font-size: 1.3em;
 
 	text-align: left;
 
 	color: palette('blue', 'dark');
 
 	@media screen and (min-width: breakpoint('desktop')) {
+		margin-bottom: 3em;
+
 		font-size: 2em;
 
 		text-align: center;
@@ -103,6 +124,9 @@
 		font-weight: 800;
 
 		color: palette('blue', 'base');
+		@media screen and (min-width: breakpoint('phone')) {
+			font-size: 0.8em;
+		}
 
 		&:link,
 		&:visited {
