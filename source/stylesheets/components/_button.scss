@@ -18,16 +18,22 @@
 
 	width: auto; /* 3 */
 
-	padding: 1px 6px; /* 6 */ // sass-lint:disable-line property-units
+	padding: 5px 8px; /* 6 */ // sass-lint:disable-line property-units
+	margin-right: 5.5em;
 
 	overflow: visible; /* 3 */
 
+	text-decoration: none;
 	text-indent: 0;
 	white-space: inherit;
 
 	cursor: pointer; /* 2 */
 
+	color: palette('text-content','white');
+
 	background-color: palette('button'); /* 5 */
+
+	border-radius: 15px 15px;
 
 	box-sizing: inherit;
 
@@ -64,6 +70,8 @@ button,
 [role='button'],
 [type='button'] {
 	@extend %button-reset;
+
+	float: right;
 }
 
 [type='reset'] {
@@ -80,4 +88,8 @@ button,
 button:-moz-focusring,
 input:-moz-focusring {
 	outline: 1px dotted ButtonText;
+}
+
+.div-button-download {
+	margin-bottom: 8em;
 }
