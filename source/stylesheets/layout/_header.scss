@@ -32,16 +32,16 @@
 		min-height: 800px;
 
 		background-image: image('mockup-interface-480px.png'),
-		image('elemento-header-3-320px.png'),
-		image('elemento-header-7-320px.png'),
-		image('elemento-header-2-320px.png'),
-		image('elemento-header-5-320px.png'),
-		image('elemento-header-1-320px.png'),
-		image('elemento-header-6-320px.png'),
-		image('elemento-header-4-320px.png'),
-		image('elemento-header-8-320px.png'),
+		image('elemento-header-3-480px.png'),
+		image('elemento-header-7-480px.png'),
+		image('elemento-header-2-480px.png'),
+		image('elemento-header-5-480px.png'),
+		image('elemento-header-1-480px.png'),
+		image('elemento-header-6-480px.png'),
+		image('elemento-header-4-480px.png'),
+		image('elemento-header-8-480px.png'),
 		linear-gradient(to bottom, palette('white')52%, palette('blue', 'base') 52%, palette('blue', 'base') 62%, palette('blue', 'medium') 62%, palette('blue', 'medium') 72%, palette('blue', 'dark') 72%, palette('blue', 'dark') 82%, palette('transparent') 82%, palette('transparent') 82%);
-		background-position: top 60% left 50%, top 7% left 62%, top 3% left 90%, top 30% left 80%, top 40% left 90%, top 32% left 18%, top 7% left 12%, top 7% left 28%, top 33% left 11%, top 5% left 50%, top 4% left 61%, top 2% left 81%, top 30% left 71%, top 40% left 79%, top 33% left 17%;
+		background-position: top 60% left 50%, top 7% left 62%, top 1% left 90%, top 30% left 80%, top 40% left 90%, top 32% left 22%, top 7% left 12%, top 7% left 28%, top 33% left 11%, top 5% left 50%, top 4% left 61%, top 2% left 81%, top 30% left 71%, top 40% left 79%, top 33% left 17%;
 	}
 
 	@media screen and (min-width: breakpoint('tablet')) {

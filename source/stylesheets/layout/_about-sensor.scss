@@ -24,6 +24,27 @@
 	top 21% left 24%,
 	top 9% left 27%;
 
+	@media screen and (min-width: breakpoint('phablet')) {
+		background-image: image('mockup-interface-2-480px.png'),
+		image('elementoa-480px.png'),
+		image('elementog-480px.png'),
+		image('elementod-480px.png'),
+		image('elementob-480px.png'),
+		image('elementoc-480px.png'),
+		image('elementof-480px.png'),
+		image('elementoe-480px.png'),
+		image('elementoh-480px.png');
+		background-position: top 10% left 50%,
+		bottom 70% left 60%,
+		top 8% left 15%,
+		bottom 70% left 47%,
+		top 8% right 18%,
+		top 18% right 20%,
+		top 27% right 10%,
+		top 26% left 24%,
+		top 9% left 27%;
+	}
+
 	@media screen and (min-width: breakpoint('wide')) {
 		background-image: image('mockup-interface-2.png'),
 		image('elementoa.png'),
