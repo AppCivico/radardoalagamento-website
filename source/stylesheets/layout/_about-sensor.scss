@@ -45,6 +45,27 @@
 		top 9% left 27%;
 	}
 
+	@media screen and (min-width: breakpoint('tablet')) {
+		background-image: image('mockup-interface-2-640px.png'),
+		image('elementoa-640px.png'),
+		image('elementog-640px.png'),
+		image('elementod-640px.png'),
+		image('elementob-640px.png'),
+		image('elementoc-640px.png'),
+		image('elementof-640px.png'),
+		image('elementoe-640px.png'),
+		image('elementoh-640px.png');
+		background-position: top 10% left 50%,
+		bottom 44% left 60%,
+		top 8% left 15%,
+		bottom 48% left 47%,
+		top 8% right 18%,
+		top 18% right 20%,
+		top 30% right 8%,
+		top 35% left 24%,
+		top 9% left 27%;
+	}
+
 	@media screen and (min-width: breakpoint('wide')) {
 		background-image: image('mockup-interface-2.png'),
 		image('elementoa.png'),
@@ -80,6 +101,10 @@
 	margin-top: 20em;
 	margin-right: auto;
 	margin-left: auto;
+
+	@media screen and (min-width: breakpoint('tablet')) {
+		margin-top: 25em;
+	}
 
 	h1 {
 		font-size: 2.2em;
