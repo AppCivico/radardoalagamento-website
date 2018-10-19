@@ -6,13 +6,24 @@
 .regioes h1 {
 	margin-bottom: 1.5em;
 
-	font-size: 1.3em;
+	font-size: 1em;
 
 	text-align: left;
 
 	color: palette('blue', 'dark');
 
-	@media screen and (min-width: breakpoint('desktop')) {
+	@media screen and (min-width: breakpoint('phablet')) {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+
+	}
+
+    @media screen and (min-width: breakpoint('tablet')) {
+      font-size: 1.3em;
+    }
+
+    @media screen and (min-width: breakpoint('desktop')) {
 		font-size: 2em;
 	}
 }
@@ -28,11 +39,33 @@
 .district-list {
 	column-width: 5em;
 
-	columns: 2;
-	@media screen and (min-width: breakpoint('wide')) {
-		margin-left: 15em;
+	columns: 1;
 
-		column-gap: 17em;
+    font-size: 0.8em;
+
+    @media screen and (min-width: breakpoint('phablet')) {
+      margin-left: 4em;
+      columns: 2;
+      column-gap: 5em;
+    }
+
+    @media screen and (min-width: breakpoint('tablet')) {
+      margin-left: 6em;
+      column-gap: 7em;
+    }
+
+	@media screen and (min-width: breakpoint('desktop')) {
+      margin-left: 6em;
+
+      column-gap: 17em;
+
+	}
+
+    @media screen and (min-width: breakpoint('wide')) {
+      margin-left: 15em;
+
+      column-gap: 17em;
+
 	}
 
 	& a {
@@ -48,14 +81,23 @@
 }
 
 .regioes-list {
-	margin-left: 46%;
+	margin-left: 37%;
 
-	font-size: 1.3em;
+
+	font-size: 0.8em;
 
 	column-width: 5em;
 	column-gap: 15em;
 
 	columns: 1;
+
+  @media screen and (min-width: breakpoint('desktop')) {
+    margin-left: 46%;
+
+    font-size: 1em;
+
+
+  }
 
 
 	& a {

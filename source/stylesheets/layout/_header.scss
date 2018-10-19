@@ -13,7 +13,7 @@
 
 .site-header {
 	height: 90vh;
-	min-height: 700px;
+	min-height: 500px;
 
 	background-image: image('mockup-interface-480px.png'),
 	image('elemento-header-3-320px.png'),
@@ -46,7 +46,7 @@
 
 	@media screen and (min-width: breakpoint('tablet')) {
 		height: 90vh;
-		min-height: 1100px;
+		min-height: 800px;
 
 		background-image: image('mockup-interface-640px.png'),
 		image('elemento-header-3-640px.png'),
@@ -63,7 +63,7 @@
 
 
 	@media screen and (min-width: breakpoint('desktop')) {
-		min-height: 1250px;
+		min-height: 800px;
 
 		background-image: image('mockup-interface-960px.png'),
 		image('elemento-header-3-960px.png'),
