@@ -20,6 +20,15 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
 
     <script>
+        var sensors = [
+            {{ range .Params.sensors }}
+                {{ . }},
+            {{ end }}
+            ];
+    </script>
+
+    <script>
+
 
 
       axios.get('https://dtupa.eokoe.com/district/{{ .Params.id }}/sensor')
@@ -40,13 +49,15 @@
       especificSensores.innerHTML = tbody;
 
   });
+
+
   </script>
 
 
     <script>
 
-
-        axios.get('https://dtupa.eokoe.com/sensor/{{ .Params.sensors }}/sample')
+    sensors.forEach(function(sensorsKey){
+        axios.get('https://dtupa.eokoe.com/sensor/' + sensorsKey + '/sample')
         .then(function (response) {
 
             results = response.data.results;
@@ -62,9 +73,11 @@
                 tbody += '</tbody>'
             });
 
-        leituras.innerHTML = tbody;
+        leituras.innerHTML += tbody;
 
     });
+
+});
     </script>
 
 
