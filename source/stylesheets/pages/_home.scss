@@ -17,19 +17,19 @@
 	margin-right: auto;
 	margin-left: auto;
 
-	@media screen and (min-width: breakpoint('phablet')) {
-		padding: ($gutter * 2) $gutter;
-	}
-
-	@media screen and (min-width: breakpoint('desktop')) {
-		padding: ($gutter * 3) $gutter;
-	}
-}
-
-.smaller-width {
-	@media screen and (min-width: breakpoint('desktop')) {
-		max-width: $smaller-max-width;
-	}
+//	@media screen and (min-width: breakpoint('phablet')) {
+//		padding: ($gutter * 2) $gutter;
+//	}
+//
+//	@media screen and (min-width: breakpoint('desktop')) {
+//		padding: ($gutter * 3) $gutter;
+//	}
+//}
+//
+//.smaller-width {
+//	@media screen and (min-width: breakpoint('desktop')) {
+//		max-width: $smaller-max-width;
+//	}
 }
 
 .content h2 {
