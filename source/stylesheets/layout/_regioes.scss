@@ -13,17 +13,17 @@
 	color: palette('blue', 'dark');
 
 	@media screen and (min-width: breakpoint('phablet')) {
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
+		margin-right: auto;
+		margin-left: auto;
 
+		text-align: center;
 	}
 
-    @media screen and (min-width: breakpoint('tablet')) {
-      font-size: 1.3em;
-    }
+	@media screen and (min-width: breakpoint('tablet')) {
+		font-size: 1.3em;
+	}
 
-    @media screen and (min-width: breakpoint('desktop')) {
+	@media screen and (min-width: breakpoint('desktop')) {
 		font-size: 2em;
 	}
 }
@@ -37,35 +37,36 @@
 }
 
 .district-list {
+	font-size: 0.8em;
+
 	column-width: 5em;
 
 	columns: 1;
 
-    font-size: 0.8em;
+	@media screen and (min-width: breakpoint('phablet')) {
+		margin-left: 4em;
 
-    @media screen and (min-width: breakpoint('phablet')) {
-      margin-left: 4em;
-      columns: 2;
-      column-gap: 5em;
-    }
+		column-gap: 5em;
 
-    @media screen and (min-width: breakpoint('tablet')) {
-      margin-left: 6em;
-      column-gap: 7em;
-    }
-
-	@media screen and (min-width: breakpoint('desktop')) {
-      margin-left: 6em;
-
-      column-gap: 17em;
-
+		columns: 2;
 	}
 
-    @media screen and (min-width: breakpoint('wide')) {
-      margin-left: 15em;
+	@media screen and (min-width: breakpoint('tablet')) {
+		margin-left: 6em;
 
-      column-gap: 17em;
+		column-gap: 7em;
+	}
 
+	@media screen and (min-width: breakpoint('desktop')) {
+		margin-left: 6em;
+
+		column-gap: 17em;
+	}
+
+	@media screen and (min-width: breakpoint('wide')) {
+		margin-left: 15em;
+
+		column-gap: 17em;
 	}
 
 	& a {
@@ -83,7 +84,6 @@
 .regioes-list {
 	margin-left: 37%;
 
-
 	font-size: 0.8em;
 
 	column-width: 5em;
@@ -91,13 +91,11 @@
 
 	columns: 1;
 
-  @media screen and (min-width: breakpoint('desktop')) {
-    margin-left: 46%;
+	@media screen and (min-width: breakpoint('desktop')) {
+		margin-left: 46%;
 
-    font-size: 1em;
-
-
-  }
+		font-size: 1em;
+	}
 
 
 	& a {
