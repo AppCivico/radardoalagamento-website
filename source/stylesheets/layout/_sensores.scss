@@ -110,10 +110,23 @@
 	}
 
 	@media screen and (min-width: breakpoint('desktop')) {
+		margin-left: 3em;
+
 		font-size: 1.3em;
 
-		column-width: 5em;
-		column-gap: 15em;
+		column-width: 4em;
+		column-gap: 4em;
+
+		columns: 2;
+	}
+
+	@media screen and (min-width: breakpoint('wide')) {
+		margin-left: 3em;
+
+		font-size: 1.3em;
+
+		column-width: 4em;
+		column-gap: 4em;
 
 		columns: 3;
 	}
