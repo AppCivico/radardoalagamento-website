@@ -5,7 +5,7 @@
 	margin-left: auto;
 
 	text-align: center;
-	@media screen and (min-width: breakpoint('wide')) {
+	@media screen and (min-width: breakpoint('desktop')) {
 		display: inline-block;
 
 		width: 15em;
@@ -23,7 +23,7 @@
 	margin-right: auto;
 	margin-left: auto;
 
-	@media screen and (min-width: breakpoint('wide')) {
+	@media screen and (min-width: breakpoint('desktop')) {
 		display: inline-block;
 
 		width: 28%;
