@@ -133,10 +133,16 @@
 
 	& a {
 		font-weight: 800;
+		font-size: 0.8em;
 
 		color: palette('blue', 'base');
-		@media screen and (min-width: breakpoint('phone')) {
-			font-size: 0.8em;
+
+		@media screen and (min-width: breakpoint('phablet')) {
+			font-size: 1em;
+		}
+
+		@media screen and (min-width: breakpoint('tablet')) {
+			font-size: 1em;
 		}
 
 		&:link,
