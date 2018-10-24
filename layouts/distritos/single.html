@@ -31,7 +31,7 @@
 
 
 
-      axios.get('https://dtupa.eokoe.com/district/{{ .Params.id }}/sensor')
+      axios.get('https://dtupa.eokoe.com/district/{{ .Params.id }}/sensor?no_paging=1')
         .then(function (response) {
           results = response.data.results;
           especificSensores = document.querySelector('#especific-sensores');
@@ -57,7 +57,7 @@
     <script>
 
     sensors.forEach(function(sensorsKey){
-        axios.get('https://dtupa.eokoe.com/sensor/' + sensorsKey + '/sample')
+        axios.get('https://dtupa.eokoe.com/sensor/' + sensorsKey + '/sample?no_paging=1')
         .then(function (response) {
 
             results = response.data.results;
