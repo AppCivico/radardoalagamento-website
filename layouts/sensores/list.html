@@ -88,10 +88,9 @@
             results = response.data.results;
             sensores = document.querySelector('#sensores');
             listContent = '';
-
             results.forEach(function(sensor){
                 var urlEscapdeName = sensor.id;
-
+                sensor.name = sensor.name.split(' - PLUVION')[0] || '';
                 listContent+= '<li><a href="/sensores?id='+urlEscapdeName+'">'+sensor.name+'</a></li>';
             });
 
