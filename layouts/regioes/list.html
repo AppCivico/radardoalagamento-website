@@ -5,7 +5,7 @@
             <h1> São Paulo </h1>
 
         <ul class="regioes-list">
-            {{ range .Data.Pages }}
+            {{ range sort .Data.Pages "TranslationBaseName" }}
 
             <li>
                 <a href="/regioes/{{ .TranslationBaseName }}/"> {{ .Title }} </a>

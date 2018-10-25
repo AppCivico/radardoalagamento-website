@@ -4,7 +4,7 @@
 
     <h1> {{ .Title }} </h1>
     <ul class="district-list">
-        {{ range .Params.districts }}
+        {{ range sort .Params.districts "name" }}
 
         <li>
             <a href="/distritos/{{ .slug }}/"> {{ .name }} </a>
