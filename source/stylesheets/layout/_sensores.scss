@@ -94,6 +94,10 @@
 
 	color: palette('blue', 'dark');
 
+	@media screen and (min-width: breakpoint('tablet')) {
+		text-align: center;
+	}
+
 	@media screen and (min-width: breakpoint('desktop')) {
 		font-size: 2em;
 
@@ -105,7 +109,16 @@
 	margin-right: auto;
 	margin-left: auto;
 
+	columns: 1;
+
 	@media screen and (min-width: breakpoint('tablet')) {
+		margin-left: 5em;
+
+		font-size: 1em;
+
+		column-width: 4em;
+		column-gap: 4em;
+
 		columns: 2;
 	}
 
@@ -117,7 +130,7 @@
 		column-width: 4em;
 		column-gap: 4em;
 
-		columns: 2;
+		columns: 3;
 	}
 
 	@media screen and (min-width: breakpoint('wide')) {
