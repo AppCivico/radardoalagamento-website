@@ -46,7 +46,7 @@
     var sensorId = getQueryString().id || null;
 
     if (sensorId) {
-        axios.get('https://dtupa.eokoe.com/sensor' + sensorId + '?no_paging=1')
+        axios.get('https://dtupa.eokoe.com/sensor/' + sensorId + '?no_paging=1')
           .then(function (response) {
             results = response.data;
             leituras = document.querySelector('#sensor');
