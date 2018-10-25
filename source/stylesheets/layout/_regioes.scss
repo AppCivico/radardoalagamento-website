@@ -44,7 +44,9 @@
 	columns: 1;
 
 	@media screen and (min-width: breakpoint('phablet')) {
-		margin-left: 4em;
+		margin-left: 3em;
+
+		font-size: 0.9em;
 
 		column-gap: 5em;
 
@@ -52,19 +54,23 @@
 	}
 
 	@media screen and (min-width: breakpoint('tablet')) {
-		margin-left: 6em;
+		margin-left: 4em;
+
+		font-size: 1em;
 
 		column-gap: 7em;
 	}
 
 	@media screen and (min-width: breakpoint('desktop')) {
-		margin-left: 6em;
+		margin-left: 5em;
+
+		font-size: 1.3em;
 
 		column-gap: 17em;
 	}
 
 	@media screen and (min-width: breakpoint('wide')) {
-		margin-left: 15em;
+		margin-left: 10em;
 
 		column-gap: 17em;
 	}
@@ -82,26 +88,40 @@
 }
 
 .regioes-list {
-	margin-left: 37%;
-
 	font-size: 0.8em;
 
 	column-width: 5em;
 	column-gap: 15em;
 
-	columns: 1;
+	text-align: left;
 
-	@media screen and (min-width: breakpoint('desktop')) {
-		margin-left: 46%;
+	columns: 1;;
 
+	@media screen and (min-width: breakpoint('phablet')) {
+		margin-right: auto;
+		margin-left: auto;
+
+		font-size: 0.9em;
+
+		text-align: center;
+	}
+
+	@media screen and (min-width: breakpoint('tablet')) {
 		font-size: 1em;
 	}
+
+	@media screen and (min-width: breakpoint('desktop')) {
+		font-size: 1.3em;
+	}
+
 
 
 	& a {
 		font-weight: 800;
 
 		color: palette('blue', 'base');
+
+
 
 		&:link,
 		&:visited {
