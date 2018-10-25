@@ -138,11 +138,11 @@
 		color: palette('blue', 'base');
 
 		@media screen and (min-width: breakpoint('phablet')) {
-			font-size: 1em;
+			font-size: 0.9em;
 		}
 
 		@media screen and (min-width: breakpoint('tablet')) {
-			font-size: 1em;
+			font-size: 0.9em;
 		}
 
 		&:link,
