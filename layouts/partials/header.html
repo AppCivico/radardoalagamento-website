@@ -13,7 +13,7 @@
 
 <body>
 <header>
-	<article class="site-header">
+	<article>
 
 		<section class="content-header">
 		   {{ if ne .Kind "404" }}
@@ -21,6 +21,11 @@
 				   {{ partialCached "menu.html" . }}
 			   </nav>
 			   {{ end }}
+		</section>
+
+		<section class="site-header">
+
+
 		</section>
 	</article>
 </header>

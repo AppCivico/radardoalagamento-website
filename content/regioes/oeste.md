@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T15:28:25.853Z
+date: 2018-10-09T18:42:29.450Z
 draft: false
 title: "Oeste"
 id: 4

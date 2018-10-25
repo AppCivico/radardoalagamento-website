@@ -24,6 +24,69 @@
 	top 21% left 24%,
 	top 9% left 27%;
 
+	@media screen and (min-width: breakpoint('phablet')) {
+		background-image: image('mockup-interface-2-480px.png'),
+		image('elementoa-480px.png'),
+		image('elementog-480px.png'),
+		image('elementod-480px.png'),
+		image('elementob-480px.png'),
+		image('elementoc-480px.png'),
+		image('elementof-480px.png'),
+		image('elementoe-480px.png'),
+		image('elementoh-480px.png');
+		background-position: top 10% left 50%,
+		bottom 70% left 60%,
+		top 8% left 15%,
+		bottom 70% left 47%,
+		top 8% right 18%,
+		top 18% right 20%,
+		top 27% right 10%,
+		top 26% left 24%,
+		top 9% left 27%;
+	}
+
+	@media screen and (min-width: breakpoint('tablet')) {
+		background-image: image('mockup-interface-2-640px.png'),
+		image('elementoa-640px.png'),
+		image('elementog-640px.png'),
+		image('elementod-640px.png'),
+		image('elementob-640px.png'),
+		image('elementoc-640px.png'),
+		image('elementof-640px.png'),
+		image('elementoe-640px.png'),
+		image('elementoh-640px.png');
+		background-position: top 10% left 50%,
+		bottom 44% left 60%,
+		top 8% left 15%,
+		bottom 48% left 47%,
+		top 8% right 18%,
+		top 18% right 20%,
+		top 30% right 8%,
+		top 35% left 24%,
+		top 9% left 27%;
+	}
+
+	@media screen and (min-width: breakpoint('desktop')) {
+		background-image: image('mockup-interface-2-960px.png'),
+		image('elementoa-960px.png'),
+		image('elementog-960px.png'),
+		image('elementod-960px.png'),
+		image('elementob-960px.png'),
+		image('elementoc-960px.png'),
+		image('elementof-960px.png'),
+		image('elementoe-960px.png'),
+		image('elementoh-960px.png');
+		background-position: top 50% left 15%,
+		bottom 22% left 34%,
+		top 22% left 8%,
+		bottom 22% left 24%,
+		top 25% right 55%,
+		top 43% right 53%,
+		top 70% right 51%,
+		top 55% left 12%,
+		top 19% left 15%;
+	}
+
 	@media screen and (min-width: breakpoint('wide')) {
 		background-image: image('mockup-interface-2.png'),
 		image('elementoa.png'),
@@ -60,9 +123,27 @@
 	margin-right: auto;
 	margin-left: auto;
 
+	@media screen and (min-width: breakpoint('tablet')) {
+		margin-top: 25em;
+	}
+
 	h1 {
 		font-size: 2.2em;
 		line-height: 4rem;
+	}
+
+	@media screen and (min-width: breakpoint('desktop')) {
+		width: 35%;
+
+		margin-top: 0;
+		margin-left: 35em;
+
+		line-height: 1.5rem;
+
+		h1 {
+			font-size: 3em;
+			line-height: 4rem;
+		}
 	}
 
 	@media screen and (min-width: breakpoint('wide')) {

@@ -2,6 +2,7 @@
 
 
 <section class="content-list-sensor">
+    <!--<div class="div-button-download"> <a href="https://dtupa.eokoe.com/sensor/?content_type=text/csv"><button class="button-download" type="button">Download</button></a></div>-->
 
     <h1> São Paulo </h1>
 
@@ -45,7 +46,7 @@
     var sensorId = getQueryString().id || null;
 
     if (sensorId) {
-        axios.get('https://dtupa.eokoe.com/sensor/' + sensorId)
+        axios.get('https://dtupa.eokoe.com/sensor/' + sensorId + '?no_paging=1')
           .then(function (response) {
             results = response.data;
             leituras = document.querySelector('#sensor');
@@ -62,7 +63,7 @@
 
     });
 
-        axios.get('https://dtupa.eokoe.com/sensor/' + sensorId + '/sample')
+        axios.get('https://dtupa.eokoe.com/sensor/' + sensorId + '/sample?no_paging=1')
           .then(function (response) {
             results = response.data.results;
             leituras = document.querySelector('#leituras');
@@ -82,15 +83,14 @@
     });
 
     } else {
-        axios.get('https://dtupa.eokoe.com/sensor/')
+        axios.get('https://dtupa.eokoe.com/sensor?no_paging=1')
             .then(function (response) {
             results = response.data.results;
             sensores = document.querySelector('#sensores');
             listContent = '';
-
             results.forEach(function(sensor){
                 var urlEscapdeName = sensor.id;
-
+                sensor.name = sensor.name.split(' - PLUVION')[0] || '';
                 listContent+= '<li><a href="/sensores?id='+urlEscapdeName+'">'+sensor.name+'</a></li>';
             });
 

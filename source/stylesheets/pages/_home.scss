@@ -18,6 +18,34 @@
 	margin-left: auto;
 
 	@media screen and (min-width: breakpoint('phablet')) {
+		padding: ($gutter * 1.5) $gutter;
+	}
+
+	@media screen and (min-width: breakpoint('desktop')) {
+		padding: ($gutter * 2.5) $gutter;
+	}
+
+	@media screen and (min-width: breakpoint('wide')) {
+		padding: ($gutter * 3) $gutter;
+	}
+}
+
+.content-header {
+	@media screen and (min-width: breakpoint('phablet')) {
+		padding: ($gutter * 1.2) $gutter;
+	}
+
+	@media screen and (min-width: breakpoint('desktop')) {
+		padding: ($gutter * 1.2) $gutter;
+	}
+}
+
+.footer-container {
+	@media screen and (min-width: breakpoint('phablet')) {
+		padding: ($gutter * 3) $gutter;
+	}
+
+	@media screen and (min-width: breakpoint('desktop')) {
 		padding: ($gutter * 3) $gutter;
 	}
 }

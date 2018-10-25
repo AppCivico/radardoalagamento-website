@@ -20,9 +20,18 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
 
     <script>
+        var sensors = [
+            {{ range .Params.sensors }}
+                {{ . }},
+            {{ end }}
+            ];
+    </script>
+
+    <script>
 
 
-      axios.get('https://dtupa.eokoe.com/district/{{ .Params.id }}/sensor')
+
+      axios.get('https://dtupa.eokoe.com/district/{{ .Params.id }}/sensor?no_paging=1')
         .then(function (response) {
           results = response.data.results;
           especificSensores = document.querySelector('#especific-sensores');
@@ -40,13 +49,17 @@
       especificSensores.innerHTML = tbody;
 
   });
+
+
   </script>
 
-<script>
 
+    <script>
 
-        axios.get('https://dtupa.eokoe.com/sensor/{{ .Params.id }}/sample')
+    sensors.forEach(function(sensorsKey){
+        axios.get('https://dtupa.eokoe.com/sensor/' + sensorsKey + '/sample?no_paging=1')
         .then(function (response) {
+
             results = response.data.results;
             leituras = document.querySelector('#leituras');
             tbody = '';
@@ -60,10 +73,13 @@
                 tbody += '</tbody>'
             });
 
-        leituras.innerHTML = tbody;
+        leituras.innerHTML += tbody;
 
     });
+
+});
     </script>
+
 
 </section>
 {{partial "footer-default" . }}

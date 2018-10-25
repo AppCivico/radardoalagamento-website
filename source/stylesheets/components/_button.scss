@@ -17,21 +17,36 @@
 	@extend %os-element-reset;
 
 	width: auto; /* 3 */
+	/* 6 */ // sass-lint:disable-line property-units
 
-	padding: 1px 6px; /* 6 */ // sass-lint:disable-line property-units
+	padding: 0.4em 1em;
 
 	overflow: visible; /* 3 */
 
+	font-size: 0.8em;
+
+	text-decoration: none;
 	text-indent: 0;
 	white-space: inherit;
 
 	cursor: pointer; /* 2 */
 
+	color: palette('text-content', 'white');
+
 	background-color: palette('button'); /* 5 */
+
+	border-radius: 15px;
 
 	box-sizing: inherit;
 
 	appearance: button; /* 1 */
+
+	@media screen and (min-width: breakpoint('tablet')) {
+		padding: 0.5em 1em;
+		margin-right: 5.5em;
+
+		font-size: 1em;
+	}
 
 	&::-moz-focus-inner {
 		/* 4 */
@@ -64,6 +79,8 @@ button,
 [role='button'],
 [type='button'] {
 	@extend %button-reset;
+
+	float: right;
 }
 
 [type='reset'] {
@@ -80,4 +97,12 @@ button,
 button:-moz-focusring,
 input:-moz-focusring {
 	outline: 1px dotted ButtonText;
+}
+
+.div-button-download {
+	margin-bottom: 4em;
+
+	@media screen and (min-width: breakpoint('tablet')) {
+		margin-bottom: 8em;
+	}
 }
