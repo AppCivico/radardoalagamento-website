@@ -87,6 +87,36 @@
 	}
 }
 
+.div-no-data {
+	height: 15vh;
+
+	margin-top: 8em;
+	margin-right: auto;
+	margin-left: auto;
+
+	font-size: 0.8em;
+
+	text-align: center;
+
+	color: palette('blue', 'base');
+
+	@media screen and (min-width: breakpoint('phablet')) {
+		margin-top: 5em;
+
+		font-size: 0.9em;
+	}
+
+	@media screen and (min-width: breakpoint('tablet')) {
+		font-size: 1em;
+	}
+
+	@media screen and (min-width: breakpoint('desktop')) {
+		margin-top: 2em;
+
+		font-size: 1.4em;
+	}
+}
+
 .regioes-list {
 	font-size: 0.8em;
 
