@@ -1,5 +1,5 @@
 ---
-date: 2018-10-22T18:56:38.057Z
+date: 2018-11-05T17:58:51.201Z
 draft: false
 title: "Vila Curuçá"
 id: 24

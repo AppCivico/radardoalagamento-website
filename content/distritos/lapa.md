@@ -1,5 +1,5 @@
 ---
-date: 2018-10-22T18:56:38.055Z
+date: 2018-11-05T17:58:51.199Z
 draft: false
 title: "Lapa"
 id: 85
@@ -9,6 +9,7 @@ name: 'Lapa'
 sensors:
   0: "25"
   1: "33"
+  2: "41"
 id: '85'
 zone_id: '4'
 ---

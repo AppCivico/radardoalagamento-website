@@ -14,6 +14,11 @@
 
         </tbody>
       </table>
+      <div class="main-loader main-loader--leituras">
+          <span class="main-loader__text">
+              Carregando...
+          </span>
+      </div>
 <table id="leituras" class="leituras-table">
     <tbody>
 
@@ -78,9 +83,11 @@
                 tbody += '</tbody>'
             });
 
-        leituras.innerHTML = tbody;
-
-    });
+            leituras.innerHTML = tbody;
+          })
+          .then(() => {
+              document.querySelector('.main-loader--leituras').classList.add('disabled');
+          });
 
     } else {
         axios.get('https://dtupa.eokoe.com/sensor?no_paging=1')

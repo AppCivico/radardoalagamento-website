@@ -1,5 +1,5 @@
 ---
-date: 2018-10-22T18:56:38.062Z
+date: 2018-11-05T17:58:51.205Z
 draft: false
 title: "Cidade Líder"
 id: 49

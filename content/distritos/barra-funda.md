@@ -1,5 +1,5 @@
 ---
-date: 2018-10-22T18:56:38.053Z
+date: 2018-11-05T17:58:51.196Z
 draft: false
 title: "Barra Funda"
 id: 32
@@ -8,6 +8,7 @@ slug: 'barra-funda'
 name: 'Barra Funda'
 sensors:
   0: "22"
+  1: "40"
 id: '32'
 zone_id: '4'
 ---

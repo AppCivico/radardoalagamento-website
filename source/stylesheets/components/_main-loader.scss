@@ -1,0 +1,36 @@
+.main-loader {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+
+    &.disabled {
+    	display: none;
+    }
+}
+
+.main-loader__text {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.main-loader:before {
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: 1px;
+    border: 5px solid palette('blue', 'base');
+    border-radius: 50%;
+    border-color: palette('blue', 'base') transparent palette('blue', 'base') transparent;
+    content: " ";
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
