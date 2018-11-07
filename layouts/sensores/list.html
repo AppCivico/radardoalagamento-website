@@ -3,6 +3,9 @@
 
 <section class="content-list-sensor">
     <div class="div-button-download">
+    	<a href="https://dtupa.eokoe.com/sensor/" id="json-button">
+    		<button class="button-download" type="button">JSON</button>
+    	</a>
     	<a href="https://dtupa.eokoe.com/sensor/?content_type=text/csv" id="csv-download-button">
     		<button class="button-download" type="button">Download</button>
     	</a>
@@ -66,7 +69,10 @@
   if (sensorId) {
 
 		const downloadButton = document.querySelector('#csv-download-button');
-		downloadButton.href = `https:\/\/dtupa.eokoe.com/sensor/${sensorId}/sample?content_type=text/csv`
+		const jsonButton = document.querySelector('#csv-download-button');
+
+		downloadButton.href = 'https:\/\/dtupa.eokoe.com/sensor/' + sensorId + '/sample?content_type=text/csv';
+		jsonButton.href = 'https://dtupa.eokoe.com/sensor/' + sensorId + '/sample';
 
     axios.get('https://dtupa.eokoe.com/sensor/' + sensorId + '?no_paging=1')
       .then(function (response) {
