@@ -2,7 +2,11 @@
 
 
 <section class="content-list-sensor">
-    <!--<div class="div-button-download"> <a href="https://dtupa.eokoe.com/sensor/?content_type=text/csv"><button class="button-download" type="button">Download</button></a></div>-->
+    <div class="div-button-download">
+    	<a href="https://dtupa.eokoe.com/sensor/?content_type=text/csv" id="csv-download-button">
+    		<button class="button-download" type="button">Download</button>
+    	</a>
+    </div>
 
     <h1> São Paulo </h1>
 
@@ -60,6 +64,10 @@
   var sensorId = getQueryString().id || null;
 
   if (sensorId) {
+
+		const downloadButton = document.querySelector('#csv-download-button');
+		downloadButton.href = `https:\/\/dtupa.eokoe.com/sensor/${sensorId}/sample?content_type=text/csv`
+
     axios.get('https://dtupa.eokoe.com/sensor/' + sensorId + '?no_paging=1')
       .then(function (response) {
         results = response.data;
