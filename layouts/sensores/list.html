@@ -6,24 +6,33 @@
 
     <h1> São Paulo </h1>
 
-<ul id="sensores" class="sensores-list">
-</ul>
 
-<table id="sensor" class="leituras-table">
-        <tbody>
+    <div class="main-loader main-loader--sensores disabled">
+      <span class="main-loader__text">
+        Carregando...
+      </span>
+    </div>
 
-        </tbody>
-      </table>
-      <div class="main-loader main-loader--leituras">
-          <span class="main-loader__text">
-              Carregando...
-          </span>
-      </div>
-<table id="leituras" class="leituras-table">
-    <tbody>
+		<ul id="sensores" class="sensores-list">
+		</ul>
 
-    </tbody>
-</table>
+		<table id="sensor" class="leituras-table">
+      <tbody>
+
+      </tbody>
+    </table>
+
+    <div class="main-loader main-loader--leituras disabled">
+      <span class="main-loader__text">
+        Carregando...
+      </span>
+    </div>
+
+		<table id="leituras" class="leituras-table">
+    	<tbody>
+
+    	</tbody>
+		</table>
 
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
@@ -31,82 +40,93 @@
 
 
 <script>
-    function getQueryString(url = window.location.search) {
+  function getQueryString(url = window.location.search) {
     const queryString = url.indexOf('?') !== -1
-        ? url.split('?')[1]
-        : [];
+      ? url.split('?')[1]
+      : [];
     const params = {};
     const queries = queryString.indexOf('&') !== -1
-        ? queryString.split('&')
-        : [queryString];
+      ? queryString.split('&')
+      : [queryString];
     for (let i = 0; i < queries.length; i += 1) {
-        const element = queries[i].indexOf('=') !== -1
+      const element = queries[i].indexOf('=') !== -1
         ? queries[i].split('=')
         : [queries[i], null];
-        params[decodeURIComponent(element[0])] = decodeURIComponent(element[1] || '');
+      params[decodeURIComponent(element[0])] = decodeURIComponent(element[1] || '');
     }
     return params;
-    }
+  }
 
-    var sensorId = getQueryString().id || null;
+  var sensorId = getQueryString().id || null;
 
-    if (sensorId) {
-        axios.get('https://dtupa.eokoe.com/sensor/' + sensorId + '?no_paging=1')
-          .then(function (response) {
-            results = response.data;
-            leituras = document.querySelector('#sensor');
-            tbody = '';
+  if (sensorId) {
+    axios.get('https://dtupa.eokoe.com/sensor/' + sensorId + '?no_paging=1')
+      .then(function (response) {
+        results = response.data;
+        leituras = document.querySelector('#sensor');
+        tbody = '';
 
-                tbody += '<h2>Sensor</h2>' + '<tbody>';
-                Object.keys(results).forEach(function(key) {
-                    tbody += "<tr><th>" + key + "</th><td>" + results[key] + "</td></tr>";
-                    });
-                tbody += '</tbody>'
+        tbody += '<h2>Sensor</h2>' + '<tbody>';
+        Object.keys(results).forEach(function(key) {
+          tbody += "<tr><th>" + key + "</th><td>" + results[key] + "</td></tr>";
+        });
+        tbody += '</tbody>'
 
 
         sensor.innerHTML = tbody;
 
-    });
+    	});
 
-        axios.get('https://dtupa.eokoe.com/sensor/' + sensorId + '/sample?no_paging=1')
-          .then(function (response) {
-            results = response.data.results;
-            leituras = document.querySelector('#leituras');
-            tbody = '';
+    const loaderLeituras = document.querySelector('.main-loader--leituras');
 
-            Object.keys(results).forEach(function(key) {
-                tbody += '<h2>Leitura</h2>' +'<tbody>';
-                Object.keys(results[key]).forEach(function(innerKey) {
+    loaderLeituras.classList.toggle('disabled');
 
-                    tbody += "<tr><th>" + innerKey + "</th><td>" + results[key][innerKey] + "</td></tr>";
-                    });
-                tbody += '</tbody>'
-            });
+    axios.get('https://dtupa.eokoe.com/sensor/' + sensorId + '/sample?no_paging=1')
+      .then(function (response) {
+        results = response.data.results;
+        leituras = document.querySelector('#leituras');
+        tbody = '';
 
-            leituras.innerHTML = tbody;
-          })
-          .then(() => {
-              document.querySelector('.main-loader--leituras').classList.add('disabled');
+        Object.keys(results).forEach(function(key) {
+          tbody += '<h2>Leitura</h2>' +'<tbody>';
+          Object.keys(results[key]).forEach(function(innerKey) {
+
+            tbody += "<tr><th>" + innerKey + "</th><td>" + results[key][innerKey] + "</td></tr>";
           });
-
-    } else {
-        axios.get('https://dtupa.eokoe.com/sensor?no_paging=1')
-            .then(function (response) {
-            results = response.data.results;
-            sensores = document.querySelector('#sensores');
-            listContent = '';
-            results.forEach(function(sensor){
-                var urlEscapdeName = sensor.id;
-                sensor.name = sensor.name.split(' - PLUVION')[0] || '';
-                listContent+= '<li><a href="/sensores?id='+urlEscapdeName+'">'+sensor.name+'</a></li>';
-            });
-
-            sensores.innerHTML = listContent;
-
+          tbody += '</tbody>'
         });
-    }
 
-    </script>
+        leituras.innerHTML = tbody;
+      })
+      .then(() => {
+    		loaderLeituras.classList.toggle('disabled');
+      });
+
+  } else {
+    const loaderSensores = document.querySelector('.main-loader--sensores');
+
+    loaderSensores.classList.toggle('disabled');
+
+    axios.get('https://dtupa.eokoe.com/sensor?no_paging=1')
+      .then(function (response) {
+        results = response.data.results;
+        sensores = document.querySelector('#sensores');
+        listContent = '';
+        results.forEach(function(sensor){
+          var urlEscapdeName = sensor.id;
+          sensor.name = sensor.name.split(' - PLUVION')[0] || '';
+          listContent+= '<li><a href="/sensores?id='+urlEscapdeName+'">'+sensor.name+'</a></li>';
+        });
+
+        sensores.innerHTML = listContent;
+
+      })
+      .then(() => {
+    		loaderSensores.classList.toggle('disabled');
+      });
+  }
+
+</script>
 </section>
 
 {{partial "footer-default" . }}
