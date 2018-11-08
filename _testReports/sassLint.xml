@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <testsuites>
-<testsuite package="org.eslint" time="0" tests="28" errors="28" name="./source/stylesheets/components/_main-loader.scss">
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 2, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 3, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 4, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 5, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 7, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 8, col 5, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 13, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 14, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 15, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.pseudo-element"><failure message="Pseudo-elements must start with double colons"><![CDATA[line 18, col 13, Warning - Pseudo-elements must start with double colons (pseudo-element)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 19, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 20, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 21, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 22, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 23, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 24, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.property-sort-order"><failure message="Expected `border-color`, found `border-radius`"><![CDATA[line 24, col 3, Warning - Expected `border-color`, found `border-radius` (property-sort-order)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 25, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.property-sort-order"><failure message="Expected `border-radius`, found `border-color`"><![CDATA[line 25, col 3, Warning - Expected `border-radius`, found `border-color` (property-sort-order)]]></failure></testcase>
-<testcase time="0" name="org.eslint.shorthand-values"><failure message="Property `border-color` should be written more concisely as `palette(&#39;blue&#39; &#39;base&#39;) transparent` instead of `palette(&#39;blue&#39; &#39;base&#39;) transparent palette(&#39;blue&#39; &#39;base&#39;) transparent`"><![CDATA[line 25, col 17, Warning - Property `border-color` should be written more concisely as `palette(&#39;blue&#39; &#39;base&#39;) transparent` instead of `palette(&#39;blue&#39; &#39;base&#39;) transparent palette(&#39;blue&#39; &#39;base&#39;) transparent` (shorthand-values)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 26, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.quotes"><failure message="Strings must use single quotes"><![CDATA[line 26, col 12, Warning - Strings must use single quotes (quotes)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 27, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 30, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 31, col 5, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.empty-line-between-blocks"><failure message="Space expected between blocks"><![CDATA[line 33, col 1, Warning - Space expected between blocks (empty-line-between-blocks)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 33, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
-<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 34, col 5, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
+<testsuite package="org.eslint" time="0" tests="1" errors="1" name="./source/stylesheets/components/_main-loader.scss">
+<testcase time="0" name="org.eslint.shorthand-values"><failure message="Property `border-color` should be written more concisely as `palette(&#39;blue&#39; &#39;base&#39;) transparent` instead of `palette(&#39;blue&#39; &#39;base&#39;) transparent palette(&#39;blue&#39; &#39;base&#39;) transparent`"><![CDATA[line 25, col 16, Warning - Property `border-color` should be written more concisely as `palette(&#39;blue&#39; &#39;base&#39;) transparent` instead of `palette(&#39;blue&#39; &#39;base&#39;) transparent palette(&#39;blue&#39; &#39;base&#39;) transparent` (shorthand-values)]]></failure></testcase>
 </testsuite>
 <testsuite package="org.eslint" time="0" tests="9" errors="9" name="./source/stylesheets/layout/_about-app.scss">
 <testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 2, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>

@@ -1,21 +1,21 @@
 .about-app {
-  margin-top: -8em;
+	margin-top: -8em;
 
-  @media screen and (min-width: breakpoint('phablet')) {
-    margin-top: -12em;
-  }
+	@media screen and (min-width: breakpoint('phablet')) {
+		margin-top: -12em;
+	}
 
-  @media screen and (min-width: breakpoint('tablet')) {
-    margin-top: -14em;
-  }
+	@media screen and (min-width: breakpoint('tablet')) {
+		margin-top: -14em;
+	}
 
-  @media screen and (min-width: breakpoint('desktop')) {
-    margin-top: -24em;
-  }
+	@media screen and (min-width: breakpoint('desktop')) {
+		margin-top: -24em;
+	}
 
-  @media screen and (min-width: breakpoint('wide')) {
-    margin-top: -20em;
-  }
+	@media screen and (min-width: breakpoint('wide')) {
+		margin-top: -20em;
+	}
 }
 
 .about-app-image {
