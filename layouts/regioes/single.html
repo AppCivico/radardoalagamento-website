@@ -7,6 +7,11 @@
 
   </ul>
 
+  <div class="main-loader main-loader--specific-sensores disabled">
+    <span class="main-loader__text">
+      Carregando...
+    </span>
+  </div>
   <table id="especific-sensores" class="leituras-table">
     <tbody></tbody>
   </table>
@@ -37,6 +42,12 @@
 
 <script>
 
+  function toggleSpecificSensorLoading() {
+    const loaderSpecificSensor = document.querySelector('.main-loader--specific-sensores');
+    loaderSpecificSensor.classList.toggle('disabled');
+  }
+
+  toggleSpecificSensorLoading();
   axios.get('https://dtupa.eokoe.com/zone/{{ .Params.id }}/sensor?no_paging=1')
     .then(function (response) {
       const results = response.data.results;
@@ -44,48 +55,54 @@
       const noData = document.querySelector('#no-data');
       let tbody = '';
 
-      results.forEach((result) => {
-        tbody += `
-                  <tr>
-                    <th>
-                          <h2>
-                                  <a href="/sensores?id=${result.id}">
-                                          ${ result.districts[0].name }
-                                  </a>
-                          </h2>
-                    </td>
-                  </tr>`;
+      if(results == null || results == '') {
+        noData.innerHTML = 'Sem dados no momento!';
+      } else {
+        results.forEach((result) => {
+          tbody += `
+                    <tr>
+                      <th>
+                            <h2>
+                                    <a href="/sensores?id=${result.id}">
+                                            ${ result.districts[0].name }
+                                    </a>
+                            </h2>
+                      </td>
+                    </tr>`;
 
-        function printValues(result) {
-          Object.keys(result).forEach((key) => {
-            if(!!result[key] && result[key].constructor.name.toLowerCase() === 'object'){
-              tbody += "<tr><th>" + key + "</th><td>" + JSON.stringify(result[key]) + "</td></tr>";
-            }
-            else if (Array.isArray(result[key])) {
-              if(typeof result[key] == 'object' && result[key] instanceof Object && !(result[key] instanceof Array)){
-                printValues(result[key]);
+          function printValues(result) {
+            Object.keys(result).forEach((key) => {
+              if(!!result[key] && result[key].constructor.name.toLowerCase() === 'object'){
+                tbody += "<tr><th>" + key + "</th><td>" + JSON.stringify(result[key]) + "</td></tr>";
               }
-              tbody += "<tr><th>" + key + "</th><td>" + JSON.stringify(result[key]) + "</td></tr>";
-            }
-            else {
-              tbody += "<tr><th>" + key + "</th><td>" + result[key] + "</td></tr>";
-            }
-          });
-        }
+              else if (Array.isArray(result[key])) {
+                if(typeof result[key] == 'object' && result[key] instanceof Object && !(result[key] instanceof Array)){
+                  printValues(result[key]);
+                }
+                tbody += "<tr><th>" + key + "</th><td>" + JSON.stringify(result[key]) + "</td></tr>";
+              }
+              else {
+                tbody += "<tr><th>" + key + "</th><td>" + result[key] + "</td></tr>";
+              }
+            });
+          }
 
-        printValues(result);
+          printValues(result);
 
-        tbody += `
-                  <tr>
-                    <th>
-                      <a href="/sensores?id=${result.id}" class="link-button">
-                        Ver leituras
-                      </a>
-                    </td>
-                  </tr>`;
-        especificSensores.innerHTML = tbody;
-      })
-
+          tbody += `
+                    <tr>
+                      <th>
+                        <a href="/sensores?id=${result.id}" class="link-button">
+                          Ver leituras
+                        </a>
+                      </td>
+                    </tr>`;
+          especificSensores.innerHTML = tbody;
+        })
+      }
+    })
+    .then(() => {
+        toggleSpecificSensorLoading();
     });
 
 
