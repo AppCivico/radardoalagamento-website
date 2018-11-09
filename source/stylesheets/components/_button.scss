@@ -79,8 +79,6 @@ button,
 [role='button'],
 [type='button'] {
 	@extend %button-reset;
-
-	float: right;
 }
 
 [type='reset'] {
@@ -100,9 +98,18 @@ input:-moz-focusring {
 }
 
 .div-button-download {
+	float: right;
 	margin-bottom: 4em;
 
 	@media screen and (min-width: breakpoint('tablet')) {
 		margin-bottom: 8em;
 	}
+}
+
+.div-button-download a {
+	text-decoration: none;
+}
+
+.load-more-samples {
+	display: none;
 }

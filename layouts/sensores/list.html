@@ -2,145 +2,180 @@
 
 
 <section class="content-list-sensor">
-    <div class="div-button-download">
-    	<a href="https://dtupa.eokoe.com/sensor/" id="json-button">
-    		<button class="button-download" type="button">JSON</button>
-    	</a>
-    	<a href="https://dtupa.eokoe.com/sensor/?content_type=text/csv" id="csv-download-button">
-    		<button class="button-download" type="button">Download</button>
-    	</a>
-    </div>
+  <div class="div-button-download">
+    <a href="https://dtupa.eokoe.com/sensor/" id="json-button">
+      <button class="button-download" type="button">JSON</button>
+    </a>
+    <a href="https://dtupa.eokoe.com/sensor/?content_type=text/csv" id="csv-download-button">
+      <button class="button-download" type="button">Download</button>
+    </a>
+  </div>
 
-    <h1> São Paulo </h1>
-
-
-    <div class="main-loader main-loader--sensores disabled">
-      <span class="main-loader__text">
-        Carregando...
-      </span>
-    </div>
-
-		<ul id="sensores" class="sensores-list">
-		</ul>
-
-		<table id="sensor" class="leituras-table">
-      <tbody>
-
-      </tbody>
-    </table>
-
-    <div class="main-loader main-loader--leituras disabled">
-      <span class="main-loader__text">
-        Carregando...
-      </span>
-    </div>
-
-		<table id="leituras" class="leituras-table">
-    	<tbody>
-
-    	</tbody>
-		</table>
+  <h1> São Paulo </h1>
 
 
-<script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
+  <div class="main-loader main-loader--sensores disabled">
+    <span class="main-loader__text">
+      Carregando...
+    </span>
+  </div>
 
+  <ul id="sensores" class="sensores-list">
+  </ul>
 
+  <table id="sensor" class="leituras-table">
+    <tbody>
 
-<script>
-  function getQueryString(url = window.location.search) {
-    const queryString = url.indexOf('?') !== -1
-      ? url.split('?')[1]
-      : [];
-    const params = {};
-    const queries = queryString.indexOf('&') !== -1
-      ? queryString.split('&')
-      : [queryString];
-    for (let i = 0; i < queries.length; i += 1) {
-      const element = queries[i].indexOf('=') !== -1
-        ? queries[i].split('=')
-        : [queries[i], null];
-      params[decodeURIComponent(element[0])] = decodeURIComponent(element[1] || '');
+    </tbody>
+  </table>
+
+  <div class="main-loader main-loader--leituras disabled">
+    <span class="main-loader__text">
+      Carregando...
+    </span>
+  </div>
+
+  <table id="leituras" class="leituras-table">
+    <tbody>
+
+    </tbody>
+  </table>
+  <button id="js-load-more-samples" class="load-more-samples">Carregar mais leituras</button>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
+
+  <script>
+    const moreSamplesButton = document.querySelector('#js-load-more-samples');
+    let nextPage;
+
+    moreSamplesButton.addEventListener('click', function(){
+      loadSamples(nextPage);
+    })
+
+    var sensorId = getQueryString().id || null;
+
+    if (sensorId) {
+        handleSensorButtons();
+        loadSensor();
+        loadSamples();
+    } else {
+      loadSensors();
     }
-    return params;
-  }
 
-  var sensorId = getQueryString().id || null;
+    function getQueryString(url = window.location.search) {
+      const queryString = url.indexOf('?') !== -1
+        ? url.split('?')[1]
+        : [];
+      const params = {};
+      const queries = queryString.indexOf('&') !== -1
+        ? queryString.split('&')
+        : [queryString];
+      for (let i = 0; i < queries.length; i += 1) {
+        const element = queries[i].indexOf('=') !== -1
+          ? queries[i].split('=')
+          : [queries[i], null];
+        params[decodeURIComponent(element[0])] = decodeURIComponent(element[1] || '');
+      }
+      return params;
+    }
 
-  if (sensorId) {
+    function handleSensorButtons() {
+      const downloadButton = document.querySelector('#csv-download-button');
+      const jsonButton = document.querySelector('#json-button');
 
-		const downloadButton = document.querySelector('#csv-download-button');
-		const jsonButton = document.querySelector('#csv-download-button');
+      downloadButton.href = 'https:\/\/dtupa.eokoe.com/sensor/' + sensorId + '/sample/?content_type=text/csv';
+      jsonButton.href = 'https://dtupa.eokoe.com/sensor/' + sensorId + '/sample';
+    }
 
-		downloadButton.href = 'https:\/\/dtupa.eokoe.com/sensor/' + sensorId + '/sample?content_type=text/csv';
-		jsonButton.href = 'https://dtupa.eokoe.com/sensor/' + sensorId + '/sample';
-
-    axios.get('https://dtupa.eokoe.com/sensor/' + sensorId + '?no_paging=1')
-      .then(function (response) {
-        results = response.data;
-        leituras = document.querySelector('#sensor');
-        tbody = '';
-
-        tbody += '<h2>Sensor</h2>' + '<tbody>';
-        Object.keys(results).forEach(function(key) {
-          tbody += "<tr><th>" + key + "</th><td>" + results[key] + "</td></tr>";
-        });
-        tbody += '</tbody>'
-
-
-        sensor.innerHTML = tbody;
-
-    	});
-
-    const loaderLeituras = document.querySelector('.main-loader--leituras');
-
-    loaderLeituras.classList.toggle('disabled');
-
-    axios.get('https://dtupa.eokoe.com/sensor/' + sensorId + '/sample?no_paging=1')
-      .then(function (response) {
-        results = response.data.results;
-        leituras = document.querySelector('#leituras');
-        tbody = '';
-
-        Object.keys(results).forEach(function(key) {
-          tbody += '<h2>Leitura</h2>' +'<tbody>';
-          Object.keys(results[key]).forEach(function(innerKey) {
-
-            tbody += "<tr><th>" + innerKey + "</th><td>" + results[key][innerKey] + "</td></tr>";
+    function loadSensor() {
+      axios.get('https://dtupa.eokoe.com/sensor/' + sensorId + '?no_paging=1')
+        .then(function (response) {
+          results = response.data;
+          leituras = document.querySelector('#sensor');
+          tbody = '';
+          tbody += '<h2>Sensor</h2>' + '<tbody>';
+          Object.keys(results).forEach(function(key) {
+            tbody += "<tr><th>" + key + "</th><td>" + results[key] + "</td></tr>";
           });
           tbody += '</tbody>'
+          sensor.innerHTML = tbody;
         });
+    }
 
-        leituras.innerHTML = tbody;
-      })
-      .then(() => {
-    		loaderLeituras.classList.toggle('disabled');
-      });
+    function loadSensors() {
+      toggleSensorLoading();
 
-  } else {
-    const loaderSensores = document.querySelector('.main-loader--sensores');
-
-    loaderSensores.classList.toggle('disabled');
-
-    axios.get('https://dtupa.eokoe.com/sensor?no_paging=1')
-      .then(function (response) {
-        results = response.data.results;
-        sensores = document.querySelector('#sensores');
-        listContent = '';
-        results.forEach(function(sensor){
-          var urlEscapdeName = sensor.id;
-          sensor.name = sensor.name.split(' - PLUVION')[0] || '';
-          listContent+= '<li><a href="/sensores?id='+urlEscapdeName+'">'+sensor.name+'</a></li>';
+      axios.get('https://dtupa.eokoe.com/sensor?no_paging=1')
+        .then(function (response) {
+          results = response.data.results;
+          sensores = document.querySelector('#sensores');
+          listContent = '';
+          results.forEach(function(sensor){
+            var urlEscapdeName = sensor.id;
+            sensor.name = sensor.name.split(' - PLUVION')[0] || '';
+            listContent+= '<li><a href="/sensores?id='+urlEscapdeName+'">'+sensor.name+'</a></li>';
+          });
+          sensores.innerHTML = listContent;
+        })
+        .then(() => {
+          toggleSensorLoading();
         });
+    }
 
-        sensores.innerHTML = listContent;
+    function loadSamples(page = false) {
+      let url = 'https://dtupa.eokoe.com/sensor/' + sensorId + '/sample';
+      if(page) {
+        url = 'https://dtupa.eokoe.com/sensor/' + sensorId + '/sample?page=' + page;
+      }
+      toggleSampleLoading();
+      axios.get(url)
+        .then(function (response) {
+          results = response.data.results;
+          leituras = document.querySelector('#leituras');
+          nextPage = response.data.next_page;
+          tbody = '';
 
-      })
-      .then(() => {
-    		loaderSensores.classList.toggle('disabled');
-      });
-  }
+          Object.keys(results).forEach(function(key) {
+            tbody += '<h2>Leitura</h2>' +'<tbody>';
+            Object.keys(results[key]).forEach(function(innerKey) {
 
-</script>
+              tbody += "<tr><th>" + innerKey + "</th><td>" + results[key][innerKey] + "</td></tr>";
+            });
+            tbody += '</tbody>'
+          });
+
+          if(page) {
+            leituras.insertAdjacentHTML('beforeend', tbody);
+          } else {
+            leituras.innerHTML = tbody;
+          }
+
+        })
+        .then(() => {
+          toggleSampleLoading();
+          handlemoreSamplesButtonVisibility();
+        });
+    }
+
+    function toggleSampleLoading() {
+      const loaderLeituras = document.querySelector('.main-loader--leituras');
+      loaderLeituras.classList.toggle('disabled');
+    }
+
+    function toggleSensorLoading() {
+      const loaderSensores = document.querySelector('.main-loader--sensores');
+      loaderSensores.classList.toggle('disabled');
+    }
+
+    function handlemoreSamplesButtonVisibility() {
+      if(nextPage) {
+        return moreSamplesButton.style.display = 'inline-block'
+      } else {
+        moreSamplesButton.style.display = 'none'
+      }
+    }
+
+  </script>
 </section>
 
 {{partial "footer-default" . }}

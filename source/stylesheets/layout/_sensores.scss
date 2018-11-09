@@ -80,6 +80,20 @@
 			font-size: 1.1em;
 		}
 	}
+
+        .link-button {
+                // @extend %button-reset;
+                color: palette('white');
+                background: palette('blue');
+                padding: 0.6em 1.2em;
+                overflow: visible; /* 3 */
+                font-size: 1em;
+                text-decoration: none;
+                font-family: $text-font-stack;
+                border-radius: 15px;
+        }
+
+
 }
 
 

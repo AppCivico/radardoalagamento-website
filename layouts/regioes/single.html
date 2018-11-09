@@ -1,22 +1,21 @@
 {{ partial "header-default" . }}
 
 <section class="districts">
+  <h1> {{ .Title }} </h1>
+  <ul class="district-list">
 
-    <h1> {{ .Title }} </h1>
-    <ul class="district-list">
 
+  </ul>
 
-    </ul>
+  <table id="especific-sensores" class="leituras-table">
+    <tbody></tbody>
+  </table>
 
-		<table id="especific-sensores" class="leituras-table">
-  		<tbody></tbody>
-		</table>
+  <table id="leituras" class="leituras-table">
+    <tbody></tbody>
+  </table>
 
-		<table id="leituras" class="leituras-table">
-  		<tbody></tbody>
-		</table>
-
-		<div id="no-data" class="div-no-data"></div>
+  <div id="no-data" class="div-no-data"></div>
 
 </section>
 
@@ -45,39 +44,49 @@
       const noData = document.querySelector('#no-data');
       let tbody = '';
 
-			results.forEach((result) => {
-				console.log(result)
+      results.forEach((result) => {
         tbody += `
-        					<tr><th>
-        						<h2>
-        							<a href="/sensores?id=${result.id}">
-        								${ result.districts[0].name }
-        							</a>
-        						</h2>
-        					</td></tr>`;
+                  <tr>
+                    <th>
+                          <h2>
+                                  <a href="/sensores?id=${result.id}">
+                                          ${ result.districts[0].name }
+                                  </a>
+                          </h2>
+                    </td>
+                  </tr>`;
 
-				function printValues(result) {
-					Object.keys(result).forEach((key) => {
-    				if(!!result[key] && result[key].constructor.name.toLowerCase() === 'object'){
-            	tbody += "<tr><th>" + key + "</th><td>" + JSON.stringify(result[key]) + "</td></tr>";
-    				}
-    				else if (Array.isArray(result[key])) {
-    					if(typeof result[key] == 'object' && result[key] instanceof Object && !(result[key] instanceof Array)){
-								printValues(result[key]);
-    					}
-            	tbody += "<tr><th>" + key + "</th><td>" + JSON.stringify(result[key]) + "</td></tr>";
-    				}
-    				else {
-            	tbody += "<tr><th>" + key + "</th><td>" + result[key] + "</td></tr>";
-    				}
-					});
-				}
+        function printValues(result) {
+          Object.keys(result).forEach((key) => {
+            if(!!result[key] && result[key].constructor.name.toLowerCase() === 'object'){
+              tbody += "<tr><th>" + key + "</th><td>" + JSON.stringify(result[key]) + "</td></tr>";
+            }
+            else if (Array.isArray(result[key])) {
+              if(typeof result[key] == 'object' && result[key] instanceof Object && !(result[key] instanceof Array)){
+                printValues(result[key]);
+              }
+              tbody += "<tr><th>" + key + "</th><td>" + JSON.stringify(result[key]) + "</td></tr>";
+            }
+            else {
+              tbody += "<tr><th>" + key + "</th><td>" + result[key] + "</td></tr>";
+            }
+          });
+        }
 
-				printValues(result);
-      	especificSensores.innerHTML = tbody;
-			})
+        printValues(result);
 
-  	});
+        tbody += `
+                  <tr>
+                    <th>
+                      <a href="/sensores?id=${result.id}" class="link-button">
+                        Ver leituras
+                      </a>
+                    </td>
+                  </tr>`;
+        especificSensores.innerHTML = tbody;
+      })
+
+    });
 
 
 </script>
