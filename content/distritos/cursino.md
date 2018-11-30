@@ -1,5 +1,5 @@
 ---
-date: 2018-11-09T20:05:49.068Z
+date: 2018-11-30T12:56:30.057Z
 draft: false
 title: "Cursino"
 id: 83

@@ -15,6 +15,7 @@
   <table id="especific-sensores" class="leituras-table">
     <tbody></tbody>
   </table>
+  <button id="js-load-more-alerts" class="load-more-samples">Carregar mais leituras</button>
 
   <table id="leituras" class="leituras-table">
     <tbody></tbody>
@@ -47,63 +48,83 @@
     loaderSpecificSensor.classList.toggle('disabled');
   }
 
+  const moreAlertsButton = document.querySelector('#js-load-more-alerts');
+  let nextPage;
+
+  moreAlertsButton.addEventListener('click', function(){
+    loadAlerts(nextPage);
+  })
+
+  loadAlerts()
+
   toggleSpecificSensorLoading();
-  axios.get('https://dtupa.eokoe.com/zone/{{ .Params.id }}/sensor?no_paging=1')
-    .then(function (response) {
-      const results = response.data.results;
-      const especificSensores = document.querySelector('#especific-sensores');
-      const noData = document.querySelector('#no-data');
-      let tbody = '';
 
-      if(results == null || results == '') {
-        noData.innerHTML = 'Sem dados no momento!';
-      } else {
-        results.forEach((result) => {
-          tbody += `
+  function loadAlerts(page = false) {
+    // console.log({{ .Params.id }})
+    let url = 'https://dtupa.eokoe.com/alert/all';
+    if(page) {
+      toggleSpecificSensorLoading();
+      url = 'https://dtupa.eokoe.com/alert/all?page=' + page;
+    }
+    axios.get(url)
+      .then(function (response) {
+
+        const results = response.data.results;
+        const especificSensores = document.querySelector('#especific-sensores');
+        const noData = document.querySelector('#no-data');
+        let tbody = '';
+
+        if(results == null || results == '') {
+          noData.innerHTML = 'Sem dados no momento!';
+        } else {
+          nextPage = response.data.next_page;
+          results.forEach((result) => {
+            tbody += `
                     <tr>
-                      <th>
-                            <h2>
-                                    <a href="/sensores?id=${result.id}">
-                                            ${ result.districts[0].name }
-                                    </a>
-                            </h2>
-                      </td>
-                    </tr>`;
-
-          function printValues(result) {
-            Object.keys(result).forEach((key) => {
-              if(!!result[key] && result[key].constructor.name.toLowerCase() === 'object'){
-                tbody += "<tr><th>" + key + "</th><td>" + JSON.stringify(result[key]) + "</td></tr>";
-              }
-              else if (Array.isArray(result[key])) {
-                if(typeof result[key] == 'object' && result[key] instanceof Object && !(result[key] instanceof Array)){
-                  printValues(result[key]);
-                }
-                tbody += "<tr><th>" + key + "</th><td>" + JSON.stringify(result[key]) + "</td></tr>";
-              }
-              else {
-                tbody += "<tr><th>" + key + "</th><td>" + result[key] + "</td></tr>";
-              }
-            });
-          }
-
-          printValues(result);
-
-          tbody += `
+                      <th> Data: </th>
+                      <td> ${formatToDateWithHours(result.created_at)} </td>
+                    </tr>
                     <tr>
-                      <th>
-                        <a href="/sensores?id=${result.id}" class="link-button">
-                          Ver leituras
-                        </a>
+                      <th> Descrição: </th>
+                      <td> ${result.description} </td>
+                    </tr>
+                    <tr>
+                      <th class="padding-bottom-sm"> Distritos alertados: </th>
+                      <td>
+                        ${ result.alert_districts.map((district) => ` ${district.district.name}`) }
                       </td>
-                    </tr>`;
-          especificSensores.innerHTML = tbody;
-        })
-      }
-    })
-    .then(() => {
+                    </tr>
+            `;
+
+            if(page) {
+              return especificSensores.insertAdjacentHTML('beforeend', tbody);
+            }
+            especificSensores.innerHTML = tbody;
+          })
+        }
+      })
+      .then(() => {
         toggleSpecificSensorLoading();
-    });
+        handleMoreAlertsButtonVisibility();
+      });
+  }
+
+  function handleMoreAlertsButtonVisibility() {
+    if(nextPage) {
+      return moreAlertsButton.style.display = 'inline-block'
+    } else {
+      moreAlertsButton.style.display = 'none'
+    }
+  }
+
+  function formatToDateWithHours(date) {
+    formatedDate = date.split(' ')[0];
+    formatedDate = formatedDate.replace(/(\d{4})\-(\d{2})\-(\d{2})/, '$3/$2/$1');
+    formatedHour = date.split(' ')[1];
+    formatedHour = formatedHour.split('.')[0];
+    formatedHour = formatedHour.replace(/(\d{2})\:(\d{2})\:(\d{2})/, '$1h$2m$3s');
+    return formatedDate + ' - ' + formatedHour;
+  }
 
 
 </script>
