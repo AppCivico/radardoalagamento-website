@@ -1,12 +1,22 @@
 {{ partial "header-default" . }}
 
 <section class="districts">
+
   <h1> {{ .Title }} </h1>
+
+  <div class="div-button-download">
+    <a href="https://dtupa.eokoe.com/sensor/" id="json-button">
+      <button class="button-download" type="button">JSON</button>
+    </a>
+    <a href="https://dtupa.eokoe.com/sensor/?content_type=text/csv" id="csv-download-button">
+      <button class="button-download" type="button">Download</button>
+    </a>
+  </div>
+
   <ul class="district-list">
 
 
   </ul>
-
   <div class="main-loader main-loader--specific-sensores disabled">
     <span class="main-loader__text">
       Carregando...
@@ -56,6 +66,7 @@
   })
 
   loadAlerts()
+  handleDownloadButtons()
 
   toggleSpecificSensorLoading();
 
@@ -109,6 +120,14 @@
         toggleSpecificSensorLoading();
         handleMoreAlertsButtonVisibility();
       });
+  }
+
+  function handleDownloadButtons() {
+      const downloadButton = document.querySelector('#csv-download-button');
+      const jsonButton = document.querySelector('#json-button');
+
+      downloadButton.href = 'https://dtupa.eokoe.com/zone/{{ .Params.id }}/alert?content_type=text/csv';
+      jsonButton.href = 'https://dtupa.eokoe.com/zone/{{ .Params.id }}/alert';
   }
 
   function handleMoreAlertsButtonVisibility() {
