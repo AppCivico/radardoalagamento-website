@@ -1,5 +1,5 @@
 ---
-date: 2018-10-09T18:42:29.527Z
+date: 2018-11-09T20:05:47.247Z
 draft: false
 title: "id - name"
 id: 19

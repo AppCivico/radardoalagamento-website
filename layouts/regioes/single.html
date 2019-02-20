@@ -2,17 +2,156 @@
 
 <section class="districts">
 
-    <h1> {{ .Title }} </h1>
-    <ul class="district-list">
-        {{ range sort .Params.districts "name" }}
+  <h1> {{ .Title }} </h1>
 
-        <li>
-            <a href="/distritos/{{ .slug }}/"> {{ .name }} </a>
-        </li>
-        {{ end }}
+  <div class="div-button-download">
+    <a href="https://dtupa.eokoe.com/sensor/" id="json-button">
+      <button class="button-download" type="button">JSON</button>
+    </a>
+    <a href="https://dtupa.eokoe.com/sensor/?content_type=text/csv" id="csv-download-button">
+      <button class="button-download" type="button">Download</button>
+    </a>
+  </div>
 
-    </ul>
+  <ul class="district-list">
+
+
+  </ul>
+  <div class="main-loader main-loader--specific-sensores disabled">
+    <span class="main-loader__text">
+      Carregando...
+    </span>
+  </div>
+  <table id="especific-sensores" class="leituras-table">
+    <tbody></tbody>
+  </table>
+  <button id="js-load-more-alerts" class="load-more-samples">Carregar mais leituras</button>
+
+  <table id="leituras" class="leituras-table">
+    <tbody></tbody>
+  </table>
+
+  <div id="no-data" class="div-no-data"></div>
 
 </section>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
+
+<script>
+  var sensors = [
+    {{ range .Params.sensors }}
+    	{{ . }},
+    {{ end }}
+  ];
+  var districts = [
+    {{ range .Params.districts }}
+    	{{ . }},
+    {{ end }}
+  ];
+</script>
+
+<script>
+
+  function toggleSpecificSensorLoading() {
+    const loaderSpecificSensor = document.querySelector('.main-loader--specific-sensores');
+    loaderSpecificSensor.classList.toggle('disabled');
+  }
+
+  const moreAlertsButton = document.querySelector('#js-load-more-alerts');
+  let nextPage;
+
+  moreAlertsButton.addEventListener('click', function(){
+    loadAlerts(nextPage);
+  })
+
+  loadAlerts()
+  handleDownloadButtons()
+
+  toggleSpecificSensorLoading();
+
+  function loadAlerts(page = false) {
+    // console.log({{ .Params.id }})
+      let url = 'https://dtupa.eokoe.com/zone/{{ .Params.id }}/alert';
+    if(page) {
+      toggleSpecificSensorLoading();
+      url = 'https://dtupa.eokoe.com/zone/{{ .Params.id }}/alert?page=' + page;
+    }
+    axios.get(url)
+      .then(function (response) {
+
+        const results = response.data.results;
+        const especificSensores = document.querySelector('#especific-sensores');
+        const noData = document.querySelector('#no-data');
+        let tbody = '';
+
+        if(results == null || results == '') {
+          noData.innerHTML = 'Sem dados no momento!';
+        } else {
+          nextPage = response.data.next_page;
+          results.forEach((result) => {
+            tbody += `
+              <tr>
+                <th> Data: </th>
+                <td> ${formatToDateWithHours(result.alert.created_at)} </td>
+              </tr>
+              <tr>
+                <th> Descrição: </th>
+                <td> ${result.alert.description} </td>
+              </tr>
+              <tr>
+                <th> Tipo de alerta: </th>
+                <td> ${result.alert.level} </td>
+              </tr>
+              <tr>
+                <th class="padding-bottom-sm"> Distrito: </th>
+                <td> ${result.name} </td>
+              </tr>
+            `;
+
+            if(page) {
+              return especificSensores.insertAdjacentHTML('beforeend', tbody);
+            }
+            especificSensores.innerHTML = tbody;
+          })
+        }
+      })
+      .then(() => {
+        toggleSpecificSensorLoading();
+        handleMoreAlertsButtonVisibility();
+      });
+  }
+
+  function handleDownloadButtons() {
+      const downloadButton = document.querySelector('#csv-download-button');
+      const jsonButton = document.querySelector('#json-button');
+
+      downloadButton.href = 'https://dtupa.eokoe.com/zone/{{ .Params.id }}/alert?content_type=text/csv';
+      jsonButton.href = 'https://dtupa.eokoe.com/zone/{{ .Params.id }}/alert';
+  }
+
+  function handleMoreAlertsButtonVisibility() {
+    if(nextPage) {
+      return moreAlertsButton.style.display = 'inline-block'
+    } else {
+      moreAlertsButton.style.display = 'none'
+    }
+  }
+
+  function formatToDateWithHours(date) {
+    formatedDate = date.split(' ')[0];
+    formatedDate = formatedDate.replace(/(\d{4})\-(\d{2})\-(\d{2})/, '$3/$2/$1');
+    formatedHour = date.split(' ')[1];
+    formatedHour = formatedHour.split('.')[0];
+    formatedHour = formatedHour.replace(/(\d{2})\:(\d{2})\:(\d{2})/, '$1h$2m$3s');
+    return formatedDate + ' - ' + formatedHour;
+  }
+
+
+</script>
+
+</section>
+
+
 
 {{partial "footer-default" . }}

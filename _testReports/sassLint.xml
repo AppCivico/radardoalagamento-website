@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+<testsuite package="org.eslint" time="0" tests="1" errors="1" name="./source/stylesheets/components/_main-loader.scss">
+<testcase time="0" name="org.eslint.shorthand-values"><failure message="Property `border-color` should be written more concisely as `palette(&#39;blue&#39; &#39;base&#39;) transparent` instead of `palette(&#39;blue&#39; &#39;base&#39;) transparent palette(&#39;blue&#39; &#39;base&#39;) transparent`"><![CDATA[line 25, col 16, Warning - Property `border-color` should be written more concisely as `palette(&#39;blue&#39; &#39;base&#39;) transparent` instead of `palette(&#39;blue&#39; &#39;base&#39;) transparent palette(&#39;blue&#39; &#39;base&#39;) transparent` (shorthand-values)]]></failure></testcase>
+</testsuite>
+<testsuite package="org.eslint" time="0" tests="9" errors="9" name="./source/stylesheets/layout/_about-app.scss">
+<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 2, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
+<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 4, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
+<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 5, col 5, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
+<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 8, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
+<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 9, col 5, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
+<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 12, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
+<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 13, col 5, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
+<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 16, col 3, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
+<testcase time="0" name="org.eslint.indentation"><failure message="Mixed tabs and spaces"><![CDATA[line 17, col 5, Warning - Mixed tabs and spaces (indentation)]]></failure></testcase>
+</testsuite>
+</testsuites>

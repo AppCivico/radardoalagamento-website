@@ -16,6 +16,7 @@
             </tbody>
         </table>
 
+        <div id="no-data" class="div-no-data"></div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
 
@@ -35,19 +36,25 @@
         .then(function (response) {
           results = response.data.results;
           especificSensores = document.querySelector('#especific-sensores');
+          noData = document.querySelector('#no-data');
           tbody = '';
 
-          Object.keys(results).forEach(function(key) {
-              tbody += '<h2>Sensor</h2>' + '<tbody>';
-              Object.keys(results[key]).forEach(function(innerKey) {
+          if(results == null || results == '') {
+              noData.innerHTML = 'Sem dados no momento!';
 
-                  tbody += "<tr><th>" + innerKey + "</th><td>" + results[key][innerKey] + "</td></tr>";
-                  });
-              tbody += '</tbody>'
-          });
+          }else {
+            Object.keys(results).forEach(function(key) {
+                tbody += '<h2>Sensor</h2>' + '<tbody>';
+                Object.keys(results[key]).forEach(function(innerKey) {
+
+                    tbody += "<tr><th>" + innerKey + "</th><td>" + results[key][innerKey] + "</td></tr>";
+                    });
+                tbody += '</tbody>'
+            });
+
 
       especificSensores.innerHTML = tbody;
-
+    }
   });
 
 
